@@ -1,4 +1,5 @@
 #include "LoopManager.h"
+#include <iostream>
 
 
 LoopManager::~LoopManager()
@@ -32,6 +33,7 @@ void LoopManager::run()
 	while (gameWindow->isOpen())
 	{
 		updateGameTime();
+		std::cout << "FPS: " << getFPS() << std::endl;
 		pollEvents();
 		update();
 		draw();
