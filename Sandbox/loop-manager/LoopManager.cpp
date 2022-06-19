@@ -40,7 +40,7 @@ void LoopManager::run()
 
 		if (isFpsLimited)
 		{
-			sf::sleep(sf::seconds(1 / maxFPS));
+			sf::sleep(sf::seconds(1.0f / maxFPS));
 		}
 	}
 }
