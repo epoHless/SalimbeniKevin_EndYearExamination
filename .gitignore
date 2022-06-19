@@ -4,10 +4,12 @@
 *.suo
 *.filter
 *.vcxproj
+*.vcxproj.filters
+*.sln
 
 # Project folders
 [Bb]in
 [Bb]inaries
 [Ii]nt
 [Ii]ntermediate
-
+[Dd]ocs
