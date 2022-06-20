@@ -11,14 +11,12 @@
 
 namespace WTGD 
 {
-
 	class GAMEOBJECT_API GameObject
 	{
 	public:
 		std::string name;
 
 	};
-
 }
 
 #endif GAMEOBJECT_H
