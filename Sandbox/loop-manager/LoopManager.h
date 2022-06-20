@@ -3,6 +3,7 @@
 
 #include "../time-manager/TimeManager.h"
 #include <SFML/Graphics.hpp>
+#include "Gameobject.h"
 
 class LoopManager
 {
@@ -65,8 +66,9 @@ private:
 
 	TimeManager timeManager;
 	float elapsedTime;
-	float lag;
 	sf::Time lastTime, currentTime;
+
+	WTGD::GameObject player;
 };
 
 #endif

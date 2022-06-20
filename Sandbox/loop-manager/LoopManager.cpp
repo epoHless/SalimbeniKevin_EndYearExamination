@@ -95,6 +95,5 @@ void LoopManager::updateGameTime()
 {
 	currentTime = timeManager.GetCurrentTime();
 	elapsedTime = TimeManager::GetElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());
-	lag += elapsedTime;
 	lastTime = currentTime;
 }
