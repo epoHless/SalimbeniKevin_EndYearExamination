@@ -10,7 +10,7 @@
 namespace WTGD
 {
 
-	class ITICKABLE_H ITickable
+	class ITICKABLE_API ITickable
 	{
 	public:
 		/// <summary>
