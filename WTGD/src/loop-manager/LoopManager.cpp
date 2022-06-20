@@ -1,74 +1,45 @@
 #include "LoopManager.h"
-#include <iostream>
 
-
-LoopManager::~LoopManager()
+WTGD::LoopManager::~LoopManager()
 {
 	delete gameWindow;
 }
 
-void LoopManager::createWindow(const float width, const float height, const char* title)
+void WTGD::LoopManager::createWindow(const float width, const float height, const char* title)
 {
 	gameWindow = new sf::RenderWindow(sf::VideoMode(width, height), title);
 }
 
-void LoopManager::setMaxFPS(unsigned newLimit)
+void WTGD::LoopManager::setMaxFPS(unsigned newLimit)
 {
 	maxFPS = newLimit;
 }
 
-unsigned LoopManager::getFPS() const
+unsigned WTGD::LoopManager::getFPS() const
 {
 	return 1 / elapsedTime;
 }
 
-void LoopManager::fpsLimitToggler()
+void WTGD::LoopManager::fpsLimitToggler()
 {
 	isFpsLimited = !isFpsLimited;
 }
 
-void LoopManager::run()
-{
-	lastTime = timeManager.GetCurrentTime();
-	while (gameWindow->isOpen())
-	{
-		updateGameTime();
-		std::cout << "FPS: " << getFPS() << std::endl;
-		pollEvents();
-		update();
-		draw();
-
-		if (isFpsLimited)
-		{
-			sf::sleep(sf::seconds(1.0f / maxFPS));
-		}
-	}
-}
-
-void LoopManager::initialize()
-{
-	/* To be filled with
-	
-		add gameobjects to the game
-
-	*/
-}
-
-void LoopManager::draw()
+void WTGD::LoopManager::draw()
 {
 	gameWindow->clear();
 
 	/* To be filled with
-	
+
 		for all the entities in game
 			get entity renderer
-			draw the renderer	
+			draw the renderer
 	*/
 
 	gameWindow->display();
 }
 
-void LoopManager::update()
+void WTGD::LoopManager::update(std::vector<GameObject> gameobjects)
 {
 	/* To be filled with
 
@@ -79,7 +50,7 @@ void LoopManager::update()
 	*/
 }
 
-void LoopManager::pollEvents()
+void WTGD::LoopManager::pollEvents()
 {
 	sf::Event events{};
 	while (gameWindow->pollEvent(events))
@@ -91,7 +62,7 @@ void LoopManager::pollEvents()
 	}
 }
 
-void LoopManager::updateGameTime()
+void WTGD::LoopManager::updateGameTime()
 {
 	currentTime = timeManager.GetCurrentTime();
 	elapsedTime = TimeManager::GetElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());

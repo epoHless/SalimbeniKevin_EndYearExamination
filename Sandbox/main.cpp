@@ -1,10 +1,8 @@
-#include "loop-manager/LoopManager.h"
+#include "game-manager/GameManager.h"
 
 int main()
 {
-	LoopManager* lm = new LoopManager();
-	lm->createWindow(1280, 720, "WTGD Game");
-	lm->run();
-
+	GameManager* gm = new GameManager();
+	gm->run(new WTGD::LoopManager());
 	return 0;
 }
