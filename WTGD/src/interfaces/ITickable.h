@@ -9,7 +9,6 @@
 
 namespace WTGD
 {
-
 	class ITICKABLE_API ITickable
 	{
 	public:
@@ -37,7 +36,6 @@ namespace WTGD
 	private:
 		bool tickable = true;
 	};
-
 }
 
 #endif ITICKABLE_H
