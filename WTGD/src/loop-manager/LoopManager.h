@@ -52,9 +52,22 @@ namespace WTGD
 		/// </summary>
 		void fpsLimitToggler();
 
+		/// <summary>
+		/// Draws the registered GameObjects on the screen
+		/// </summary>
 		void draw();
+		/// <summary>
+		/// Updates the registered GameObjects on the screen
+		/// </summary>
+		/// <param name="gameobjects"></param>
 		void update(std::vector<GameObject> gameobjects);
+		/// <summary>
+		/// Reacts to events
+		/// </summary>
 		void pollEvents();
+		/// <summary>
+		/// Updates the game time
+		/// </summary>
 		void updateGameTime();
 
 	//Private Members
