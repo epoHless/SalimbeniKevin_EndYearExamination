@@ -23,6 +23,12 @@ void GameManager::run(WTGD::LoopManager* manager)
 
 void GameManager::initialize(WTGD::LoopManager* manager)
 {
+	WTGD::GameObject* Player = new WTGD::GameObject("player");
+	gameobjects.push_back(Player);
+
+	WTGD::GameObject* enemy = new WTGD::GameObject("enemy");
+	gameobjects.push_back(enemy);
+
 	manager->createWindow(1280, 720, "Title");
 
 	/* To be filled with

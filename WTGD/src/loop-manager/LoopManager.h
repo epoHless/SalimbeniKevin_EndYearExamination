@@ -9,8 +9,9 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include <Gameobject.cpp>
+//#include <Gameobject.cpp>
 #include "../time-manager/TimeManager.h"
+#include "../gameobjects/Gameobject.h"
 
 namespace WTGD
 {

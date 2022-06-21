@@ -30,4 +30,6 @@ void WTGD::GameObject::on_update(const float delta_time)
 	{
 		if (item->is_active && item->is_tick_enabled()) { item->on_update(delta_time); }
 	}
+
+	printf("Gameobject : %s is active | ", get_name().c_str());
 }

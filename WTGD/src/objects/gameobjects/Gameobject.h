@@ -27,7 +27,7 @@ namespace WTGD
 		~GameObject() = default;
 
 		void add_component(Component* component);
-		void remove_component(Component* component) {};
+		void remove_component(Component* component);
 
 		template<class T, class = Component> T* get_component()const
 		{
