@@ -32,7 +32,7 @@ private:
 //Private Members
 private:
 
-	std::vector<WTGD::GameObject> gameobjects;
+	std::vector<WTGD::GameObject*> gameobjects;
 };
 
 #endif
