@@ -28,6 +28,6 @@ void WTGD::GameObject::on_update(const float delta_time)
 {
 	for (auto item : components)
 	{
-		if (item->is_active && item->tick_enabled()) { item->on_update(delta_time); }
+		if (item->is_active && item->is_tick_enabled()) { item->on_update(delta_time); }
 	}
 }

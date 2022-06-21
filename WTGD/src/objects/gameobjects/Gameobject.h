@@ -12,6 +12,7 @@
 
 #include "../Object.h"
 #include "../../interfaces/ITickable.h"
+#include "../components/Component.h"
 
 class Component;
 
