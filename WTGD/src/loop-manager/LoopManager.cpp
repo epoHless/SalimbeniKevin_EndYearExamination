@@ -39,7 +39,7 @@ void WTGD::LoopManager::draw()
 	gameWindow->display();
 }
 
-void WTGD::LoopManager::update(std::vector<GameObject> gameobjects)
+void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 {
 	/* To be filled with
 
@@ -48,6 +48,11 @@ void WTGD::LoopManager::update(std::vector<GameObject> gameobjects)
 				update it
 
 	*/
+
+	for (GameObject* go : gameobjects)
+	{
+		if (go->is_tick_enabled() && go->is_active) go->on_update(elapsedTime);
+	}
 }
 
 void WTGD::LoopManager::pollEvents()

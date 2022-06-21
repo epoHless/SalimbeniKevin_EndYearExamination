@@ -20,6 +20,7 @@ namespace WTGD
 {
 	class GAMEOBJECT_API GameObject : public Object, public ITickable
 	{
+		friend class LoopManager;
 	public:
 		GameObject(const std::string name, const bool active = true);
 		GameObject(const std::string name, const std::vector<Component*> components,const bool active = true);

@@ -60,7 +60,7 @@ namespace WTGD
 		/// Updates the registered GameObjects on the screen
 		/// </summary>
 		/// <param name="gameobjects"></param>
-		void update(std::vector<GameObject> gameobjects);
+		void update(std::vector<GameObject*> gameobjects);
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
