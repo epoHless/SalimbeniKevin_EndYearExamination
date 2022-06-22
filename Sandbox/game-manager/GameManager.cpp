@@ -11,13 +11,7 @@ void GameManager::run()
 		_manager->updateGameTime();
 		std::cout << "FPS: " << _manager->getFPS() << std::endl;
 
-		_manager->pollEvents([this](sf::Event) { this->set_events(evt); }, evt);
-		
-		/*sf::Event evt{};
-		while (_manager->gameWindow->pollEvent(evt))
-		{
-
-		}*/
+		_manager->pollEvents(/*[this](sf::Event) { this->set_events_b(evt); }, evt*/);
 
 		_manager->update(gameobjects);
 		_manager->draw();
@@ -29,21 +23,37 @@ void GameManager::run()
 	}
 }
 
-void GameManager::set_events(sf::Event evt)
+void GameManager::set_events()
 {
-	if (evt.type == sf::Event::EventType::Closed)
+
+	if (/*sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)*/ (sf::Joystick::isButtonPressed(0, 0)))
 	{
-		_manager->gameWindow->close();
+		_manager->set_input_func([this](sf::Event) { this->set_events_b(); }, this->evt);
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
 	{
-		printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		printf("AAAAAAAAAAAAAAAAAAAAA\n");
+	}
+}
+
+void GameManager::set_events_b()
+{
+	if (/*sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)*/(sf::Joystick::isButtonPressed(0, 0)))
+	{
+		_manager->set_input_func([this](sf::Event) { this->set_events(); }, this->evt);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	{
+		printf("BBBBBBBBBBBBBBBBBBBBB\n");
 	}
 }
 
 void GameManager::initialize()
 {	
+	_manager->set_input_func([this](sf::Event) { this->set_events(); }, evt);
+
 	WTGD::Component* health = new WTGD::Component("Health");
 
 	WTGD::GameObject* Player = new WTGD::GameObject("player");

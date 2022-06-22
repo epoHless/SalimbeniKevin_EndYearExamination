@@ -65,11 +65,13 @@ namespace WTGD
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
-		void pollEvents(std::function<void(sf::Event)>, sf::Event evt);
+		void pollEvents(/*std::function<void(sf::Event)>, sf::Event evt*/);
 		/// <summary>
 		/// Updates the game time
 		/// </summary>
 		void updateGameTime();
+
+		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
 
 	//Private Members
 	public:
@@ -81,6 +83,9 @@ namespace WTGD
 		WTGD::TimeManager timeManager;
 		float elapsedTime = 0.0f;
 		sf::Time lastTime, currentTime;
+
+		std::function<void(sf::Event)> input_func = nullptr;
+		sf::Event input_event;
 	};
 }
 

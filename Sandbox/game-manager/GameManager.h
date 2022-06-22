@@ -24,7 +24,8 @@ public:
 	/// </summary>
 	void run();
 
-	void set_events(sf::Event evt);
+	void set_events();
+	void set_events_b();
 
 
 //Private Functions
