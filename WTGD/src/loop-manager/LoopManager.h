@@ -65,7 +65,7 @@ namespace WTGD
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
-		void pollEvents(void(*func)(sf::Event), sf::Event evt);
+		void pollEvents(std::function<void(sf::Event)>, sf::Event evt);
 		/// <summary>
 		/// Updates the game time
 		/// </summary>
@@ -81,8 +81,6 @@ namespace WTGD
 		WTGD::TimeManager timeManager;
 		float elapsedTime = 0.0f;
 		sf::Time lastTime, currentTime;
-
-		sf::Event evt;
 	};
 }
 

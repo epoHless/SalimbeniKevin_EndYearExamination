@@ -11,13 +11,13 @@ void GameManager::run()
 		_manager->updateGameTime();
 		std::cout << "FPS: " << _manager->getFPS() << std::endl;
 
-		//_manager->pollEvents(set_events, evt);
+		_manager->pollEvents([this](sf::Event) { this->set_events(evt); }, evt);
 		
-		sf::Event evt{};
+		/*sf::Event evt{};
 		while (_manager->gameWindow->pollEvent(evt))
 		{
 
-		}
+		}*/
 
 		_manager->update(gameobjects);
 		_manager->draw();
@@ -34,6 +34,11 @@ void GameManager::set_events(sf::Event evt)
 	if (evt.type == sf::Event::EventType::Closed)
 	{
 		_manager->gameWindow->close();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	{
+		printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 	}
 }
 

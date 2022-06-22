@@ -56,12 +56,17 @@ void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 	}
 }
 
-void WTGD::LoopManager::pollEvents(void(*func)(sf::Event), sf::Event event)
+void WTGD::LoopManager::pollEvents(std::function<void(sf::Event)> func, sf::Event eventt)
 {
-	sf::Event evt{event};
+	sf::Event evt = eventt;
 	while (gameWindow->pollEvent(evt))
 	{		
 		func(evt);
+
+		if (evt.type == sf::Event::EventType::Closed)
+		{
+			gameWindow->close();
+		}
 	}
 }
 
