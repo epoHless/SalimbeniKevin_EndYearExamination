@@ -9,9 +9,9 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-//#include <Gameobject.cpp>
 #include "../time-manager/TimeManager.h"
 #include "../gameobjects/Gameobject.h"
+#include <functional>
 
 namespace WTGD
 {
@@ -65,7 +65,7 @@ namespace WTGD
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
-		void pollEvents();
+		void pollEvents(void(*func)(sf::Event), sf::Event evt);
 		/// <summary>
 		/// Updates the game time
 		/// </summary>
@@ -81,6 +81,8 @@ namespace WTGD
 		WTGD::TimeManager timeManager;
 		float elapsedTime = 0.0f;
 		sf::Time lastTime, currentTime;
+
+		sf::Event evt;
 	};
 }
 

@@ -2,7 +2,7 @@
 
 int main()
 {
-	GameManager* gm = new GameManager();
-	gm->run(new WTGD::LoopManager());
+	GameManager* gm = new GameManager(new WTGD::LoopManager());
+	gm->run();
 	return 0;
 }

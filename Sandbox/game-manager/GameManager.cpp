@@ -1,35 +1,55 @@
 #include "GameManager.h"
 #include <iostream>
 
-void GameManager::run(WTGD::LoopManager* manager)
+void GameManager::run()
 {
-	initialize(manager);
+	initialize();
 
-	manager->lastTime = manager->timeManager.GetCurrentTime();
-	while (manager->gameWindow->isOpen())
+	_manager->lastTime = _manager->timeManager.GetCurrentTime();
+	while (_manager->gameWindow->isOpen())
 	{
-		manager->updateGameTime();
-		std::cout << "FPS: " << manager->getFPS() << std::endl;
-		manager->pollEvents();
-		manager->update(gameobjects);
-		manager->draw();
+		_manager->updateGameTime();
+		std::cout << "FPS: " << _manager->getFPS() << std::endl;
 
-		if (manager->isFpsLimited)
+		//_manager->pollEvents(set_events, evt);
+		
+		sf::Event evt{};
+		while (_manager->gameWindow->pollEvent(evt))
 		{
-			sf::sleep(sf::seconds(1.0f / manager->maxFPS));
+
+		}
+
+		_manager->update(gameobjects);
+		_manager->draw();
+
+		if (_manager->isFpsLimited)
+		{
+			sf::sleep(sf::seconds(1.0f / _manager->maxFPS));
 		}
 	}
 }
 
-void GameManager::initialize(WTGD::LoopManager* manager)
+void GameManager::set_events(sf::Event evt)
 {
+	if (evt.type == sf::Event::EventType::Closed)
+	{
+		_manager->gameWindow->close();
+	}
+}
+
+void GameManager::initialize()
+{	
+	WTGD::Component* health = new WTGD::Component("Health");
+
 	WTGD::GameObject* Player = new WTGD::GameObject("player");
+	Player->add_component(health);
+
 	gameobjects.push_back(Player);
 
 	WTGD::GameObject* enemy = new WTGD::GameObject("enemy");
 	gameobjects.push_back(enemy);
 
-	manager->createWindow(1280, 720, "Title");
+	_manager->createWindow(1280, 720, "Title");
 
 	/* To be filled with
 	

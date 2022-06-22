@@ -19,9 +19,11 @@ void WTGD::GameObject::add_component(Component* component)
 	components.push_back(component);
 }
 
-void WTGD::GameObject::remove_component(Component* component)
+void WTGD::GameObject::remove_component_depr(Component* component)
 {
 	components.erase(std::remove(components.begin(), components.end(), component), components.end());
+
+	printf("removed : %s", component->get_name().c_str());
 }
 
 void WTGD::GameObject::on_update(const float delta_time)

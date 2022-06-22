@@ -3,6 +3,7 @@
 WTGD::LoopManager::~LoopManager()
 {
 	delete gameWindow;
+	delete this;
 }
 
 void WTGD::LoopManager::createWindow(const float width, const float height, const char* title)
@@ -55,15 +56,12 @@ void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 	}
 }
 
-void WTGD::LoopManager::pollEvents()
+void WTGD::LoopManager::pollEvents(void(*func)(sf::Event), sf::Event event)
 {
-	sf::Event events{};
-	while (gameWindow->pollEvent(events))
-	{
-		if (events.type == sf::Event::EventType::Closed)
-		{
-			gameWindow->close();
-		}
+	sf::Event evt{event};
+	while (gameWindow->pollEvent(evt))
+	{		
+		func(evt);
 	}
 }
 

@@ -10,7 +10,7 @@ public:
 	/// <summary>
 	/// Default Loop Manager Contructor
 	/// </summary>
-	GameManager(){};
+	GameManager(WTGD::LoopManager* manager) : _manager(manager) {};
 	/// <summary>
 	/// Default Loop Manager Destructor
 	/// </summary>
@@ -22,17 +22,22 @@ public:
 	/// <summary>
 	/// Main loop function
 	/// </summary>
-	void run(WTGD::LoopManager* manager);
+	void run();
+
+	void set_events(sf::Event evt);
 
 
 //Private Functions
 private:
-	void initialize(WTGD::LoopManager* manager);
+	void initialize();
 
 //Private Members
 private:
 
 	std::vector<WTGD::GameObject*> gameobjects;
+
+	WTGD::LoopManager* _manager = nullptr;
+	sf::Event evt;
 };
 
 #endif

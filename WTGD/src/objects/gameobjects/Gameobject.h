@@ -27,9 +27,29 @@ namespace WTGD
 		~GameObject() = default;
 
 		void add_component(Component* component);
-		void remove_component(Component* component);
+		void remove_component_depr(Component* component);
 
-		template<class T, class = Component> T* get_component()const
+		template<class T, class = Component>
+		void remove_component()const
+		{
+			/*if (components.size() == 0) return;
+
+			for (Component* comp : components)
+			{
+				const auto val = dynamic_cast<T*>(comp);
+
+				if(!val)
+				{
+					printf("no component found!");
+					continue;
+				}
+				else				
+					components.erase(val);				
+			}*/
+		}
+
+		template<class T, class = Component> 
+		T* get_component()const
 		{
 			if (components.size() == 0) return nullptr;
 
@@ -43,7 +63,8 @@ namespace WTGD
 			return nullptr;
 		}
 
-		template<class T, class = Component> std::vector<T*> get_components()const
+		template<class T, class = Component>
+		std::vector<T*> get_components()const
 		{
 			std::vector<T*> output;
 
