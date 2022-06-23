@@ -23,7 +23,7 @@ namespace WTGD
 		bool right_movement;
 		float x_axis, y_axis;
 
-		void on_update(const float delta) override = 0;
+		virtual void on_update(const float delta) override;
 	};
 }
 

@@ -10,4 +10,8 @@ WTGD::Controller::Controller() : Component("Base Controller")
 
 WTGD::Controller::~Controller() = default;
 
+void WTGD::Controller::on_update(const float delta)
+{
+}
+
 
