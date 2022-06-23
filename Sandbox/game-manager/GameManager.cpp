@@ -54,7 +54,7 @@ void GameManager::initialize()
 {	
 	_manager->set_input_func([this](sf::Event) { this->set_events(); }, evt);
 
-	player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
+	player = new WTGD::Character(new WTGD::JoystickController(), "Player");
 	player->renderer->set_texture("res\\pacman.png");
 	player->transform->set_scale(100, 100);
 	player->transform->set_position(640, 360);
