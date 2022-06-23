@@ -26,7 +26,7 @@ void GameManager::run()
 void GameManager::set_events()
 {
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
 	{
 		_manager->set_input_func([this](sf::Event) { this->set_events_b(); }, this->evt);
 	}
@@ -34,20 +34,20 @@ void GameManager::set_events()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
 	{
 		printf("AAAAAAAAAAAAAAAAAAAAA\n");
-	}
+	}*/
 }
 
 void GameManager::set_events_b()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-	{
-		_manager->set_input_func([this](sf::Event) { this->set_events(); }, this->evt);
-	}
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+	//{
+	//	_manager->set_input_func([this](sf::Event) { this->set_events(); }, this->evt);
+	//}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-	{
-		printf("BBBBBBBBBBBBBBBBBBBBB\n");
-	}
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	//{
+	//	printf("BBBBBBBBBBBBBBBBBBBBB\n");
+	//}
 }
 
 void GameManager::initialize()
@@ -57,7 +57,7 @@ void GameManager::initialize()
 	player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
 	player->renderer->set_texture("res\\pacman.png");
 	player->transform->set_scale(100, 100);
-	player->transform->set_position(740, 360);
+	player->transform->set_position(640, 360);
 	gameobjects.push_back(player);
 
 	_manager->createWindow(1280, 720, "Title");

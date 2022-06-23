@@ -4,6 +4,8 @@ WTGD::Transform::Transform() : Component("Transform")
 {
     disable(); //disable loop call
 
+    
+
     position = sf::Vector2f(640, 320);
     scale = sf::Vector2f(1, 1);
     rotation = 0;
@@ -39,6 +41,7 @@ void WTGD::Transform::set_position(sf::Vector2f newPos) const
 
 void WTGD::Transform::set_rotation(float angle) const
 {
+    
     transform->setRotation(angle);
 }
 

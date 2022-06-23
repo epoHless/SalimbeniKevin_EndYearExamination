@@ -24,7 +24,7 @@ namespace WTGD
 	protected:
 		bool fw_movement;
 		bool right_movement;
-		float x_axis, y_axis;
+		float x_axis, y_axis, current_rotation = 0.0f;
 
 		virtual void on_update(const float delta) override;
 	};

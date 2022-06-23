@@ -13,7 +13,7 @@ WTGD::MovementComponent::~MovementComponent()
 sf::Vector2f WTGD::MovementComponent::get_velocity() const
 {
 	sf::Vector2f direction = controller->get_direction_vector();
-	return sf::Vector2f(direction.x * speed, direction.y * speed);
+	return sf::Vector2f(direction.x * movement_speed, direction.y * movement_speed);
 }
 
 sf::Vector2f WTGD::MovementComponent::get_direction() const
@@ -28,9 +28,11 @@ sf::Vector2f WTGD::MovementComponent::get_direction() const
 
 void WTGD::MovementComponent::on_update(const float delta)
 {
+	transform->set_rotation(controller->current_rotation * rotation_speed);
+
 	if (!is_moving()) return;
 
-	auto nextPosition = transform->get_transform()->getPosition() + sf::Vector2f(get_velocity().x * speed * delta, get_velocity().y * speed * delta);
+	auto nextPosition = transform->get_transform()->getPosition() + sf::Vector2f(get_velocity().x * movement_speed * delta, get_velocity().y * movement_speed * delta);
 
 	transform->set_position(nextPosition.x, nextPosition.y);
 	printf("Position x: %f | Position y: %f\n", nextPosition.x, nextPosition.y);

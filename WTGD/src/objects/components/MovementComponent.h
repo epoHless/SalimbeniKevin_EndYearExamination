@@ -24,7 +24,7 @@ namespace WTGD
 			return(controller->fw_movement || controller->right_movement); 
 		}
 
-		void set_speed(const float new_speed) { speed = new_speed; }
+		void set_speed(const float new_speed) { movement_speed = new_speed; }
 
 		[[nodiscard]] sf::Vector2f get_velocity()const;
 		[[nodiscard]] sf::Vector2f get_direction()const;
@@ -32,7 +32,8 @@ namespace WTGD
 		Controller* controller;
 		Transform* transform;
 
-		float speed = 10.0f;
+		float movement_speed = 10.0f;
+		float rotation_speed = 5.0f;
 
 		void on_update(const float delta) override;
 	};
