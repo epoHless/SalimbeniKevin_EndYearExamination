@@ -14,6 +14,7 @@ namespace WTGD
 {
 	class RENDERER_API Renderer : public Component
 	{
+		friend class LoopManager;
 	public:
 		Renderer();
 		explicit Renderer(std::string texture_path);
