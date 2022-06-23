@@ -15,7 +15,7 @@ namespace WTGD
     class WORLD_OBJECT_API WorldObject : public AreaObject
     {
     public:
-        WorldObject();
+        WorldObject(const std::string name, const bool is_active);
         ~WorldObject();
 
         Renderer* renderer;

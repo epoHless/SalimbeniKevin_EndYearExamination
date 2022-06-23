@@ -39,6 +39,8 @@ private:
 
 	WTGD::LoopManager* _manager = nullptr;
 	sf::Event evt;
+
+	WTGD::Character* player;
 };
 
 #endif

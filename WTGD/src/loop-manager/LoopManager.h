@@ -11,6 +11,9 @@
 #include <SFML/Graphics.hpp>
 #include "../time-manager/TimeManager.h"
 #include "../gameobjects/Gameobject.h"
+#include "../components/KeyboardController.h"
+#include "../components/JoystickController.h"
+#include <Character.h>
 #include <functional>
 
 namespace WTGD
@@ -56,7 +59,7 @@ namespace WTGD
 		/// <summary>
 		/// Draws the registered GameObjects on the screen
 		/// </summary>
-		void draw();
+		void draw(std::vector<GameObject*> gameobjects);
 		/// <summary>
 		/// Updates the registered GameObjects on the screen
 		/// </summary>

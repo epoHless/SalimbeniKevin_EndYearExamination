@@ -26,7 +26,7 @@ void WTGD::LoopManager::fpsLimitToggler()
 	isFpsLimited = !isFpsLimited;
 }
 
-void WTGD::LoopManager::draw()
+void WTGD::LoopManager::draw(std::vector<GameObject*> gameobjects)
 {
 	gameWindow->clear();
 
@@ -36,6 +36,16 @@ void WTGD::LoopManager::draw()
 			get entity renderer
 			draw the renderer
 	*/
+
+	for each (auto go in gameobjects)
+	{
+		const auto renders = go->get_components<Transform>();
+
+		for each (auto rend in renders)
+		{
+			gameWindow->draw(*rend->get_transform());
+		}
+	}
 
 	gameWindow->display();
 }

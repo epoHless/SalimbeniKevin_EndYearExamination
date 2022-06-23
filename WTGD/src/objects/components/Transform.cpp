@@ -4,7 +4,7 @@ WTGD::Transform::Transform() : Component("Transform")
 {
     disable(); //disable loop call
 
-    position = sf::Vector2f(20, 20);
+    position = sf::Vector2f(640, 320);
     scale = sf::Vector2f(1, 1);
     rotation = 0;
 

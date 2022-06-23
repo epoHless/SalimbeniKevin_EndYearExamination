@@ -32,7 +32,7 @@ namespace WTGD
 		Controller* controller;
 		Transform* transform;
 
-		float speed = 10;
+		float speed = 10.0f;
 
 		void on_update(const float delta) override;
 	};

@@ -33,4 +33,5 @@ void WTGD::MovementComponent::on_update(const float delta)
 	auto nextPosition = transform->get_transform()->getPosition() + sf::Vector2f(get_velocity().x * speed * delta, get_velocity().y * speed * delta);
 
 	transform->set_position(nextPosition.x, nextPosition.y);
+	printf("Position x: %f | Position y: %f\n", nextPosition.x, nextPosition.y);
 }

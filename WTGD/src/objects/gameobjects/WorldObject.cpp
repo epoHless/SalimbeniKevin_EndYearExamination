@@ -1,7 +1,10 @@
 #include "WorldObject.h"
 
-WTGD::WorldObject::WorldObject() : AreaObject()
+WTGD::WorldObject::WorldObject(const std::string name, const bool is_active) : AreaObject(name, is_active)
 {
+	this->name = name;
+	this->is_active = is_active;
+
 	renderer = new Renderer();
 	add_component(renderer);
 }

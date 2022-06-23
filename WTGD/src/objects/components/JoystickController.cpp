@@ -1,15 +1,15 @@
-#include "KeyboardController.h"
+#include "JoystickController.h"
 
-void WTGD::KeyboardController::on_update(const float delta)
+void WTGD::JoystickController::on_update(const float delta)
 {
 	Controller::on_update(delta);
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Joystick::isButtonPressed(0, 0))
 	{
 		fw_movement = true;
 		y_axis = -1;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	else if (sf::Joystick::isButtonPressed(0, 3))
 	{
 		fw_movement = true;
 		y_axis = 1;
@@ -20,12 +20,12 @@ void WTGD::KeyboardController::on_update(const float delta)
 		y_axis = 0;
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	if (sf::Joystick::isButtonPressed(0, 1))
 	{
 		right_movement = true;
 		x_axis = 1;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	else if (sf::Joystick::isButtonPressed(0, 2))
 	{
 		right_movement = true;
 		x_axis = -1;

@@ -15,7 +15,7 @@ namespace WTGD
 	class AREA_OBJECT_API AreaObject : public GameObject
 	{
 	public:
-		AreaObject();
+		AreaObject(const std::string name, const bool is_active);
 		~AreaObject();
 
 		Transform* transform;

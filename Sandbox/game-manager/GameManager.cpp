@@ -14,7 +14,7 @@ void GameManager::run()
 		_manager->pollEvents();
 
 		_manager->update(gameobjects);
-		_manager->draw();
+		_manager->draw(gameobjects);
 
 		if (_manager->isFpsLimited)
 		{
@@ -54,15 +54,11 @@ void GameManager::initialize()
 {	
 	_manager->set_input_func([this](sf::Event) { this->set_events(); }, evt);
 
-	WTGD::Component* health = new WTGD::Component("Health");
-
-	WTGD::GameObject* Player = new WTGD::GameObject("player");
-	Player->add_component(health);
-
-	gameobjects.push_back(Player);
-
-	WTGD::GameObject* enemy = new WTGD::GameObject("enemy");
-	gameobjects.push_back(enemy);
+	player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
+	player->renderer->set_texture("res\\pacman.png");
+	player->transform->set_scale(100, 100);
+	player->transform->set_position(740, 360);
+	gameobjects.push_back(player);
 
 	_manager->createWindow(1280, 720, "Title");
 

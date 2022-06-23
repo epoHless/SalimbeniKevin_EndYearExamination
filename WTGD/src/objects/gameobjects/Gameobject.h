@@ -68,7 +68,7 @@ namespace WTGD
 		{
 			std::vector<T*> output;
 
-			if (components.size() == 0) return nullptr;
+			if (components.size() == 0) return output;
 
 			for each (Component * comp in this->components)
 			{
@@ -77,6 +77,7 @@ namespace WTGD
 
 				output.push_back(val);
 			}
+
 			return output;
 		}
 
