@@ -16,7 +16,7 @@ namespace WTGD
 	{
 	public:
 		AreaObject();
-		~AreaObject() override;
+		~AreaObject();
 
 		Transform* transform;
 	};
