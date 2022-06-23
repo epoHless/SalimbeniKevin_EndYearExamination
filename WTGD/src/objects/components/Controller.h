@@ -14,9 +14,12 @@ namespace WTGD
 {
 	class CONTROLLER_API Controller : public Component
 	{
+		friend class MovementComponent;
 	public:
 		Controller();
 		~Controller() override;
+
+		[[nodiscard]] sf::Vector2f get_direction_vector()const { return sf::Vector2f(x_axis, y_axis); }
 
 	protected:
 		bool fw_movement;
