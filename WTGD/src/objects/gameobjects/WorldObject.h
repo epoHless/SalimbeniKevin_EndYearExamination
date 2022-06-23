@@ -12,7 +12,7 @@
 
 namespace WTGD
 {
-    class WorldObject : public AreaObject
+    class WORLD_OBJECT_API WorldObject : public AreaObject
     {
     public:
         WorldObject();
