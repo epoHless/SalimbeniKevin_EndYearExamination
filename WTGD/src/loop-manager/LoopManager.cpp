@@ -63,10 +63,16 @@ void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 	for (GameObject* go : gameobjects)
 	{
 		if (go->is_tick_enabled() && go->is_active) go->on_update(elapsedTime);
+
+		Collider* collider = go->get_component<Collider>();
+		if (collider)
+		{
+			collider->check_collision(activeColliders, .5f);
+		}
 	}
 }
 
-void WTGD::LoopManager::pollEvents(/*std::function<void(sf::Event)> func, sf::Event eventt*/)
+void WTGD::LoopManager::pollEvents()
 {
 	sf::Event evt = input_event;
 	while (gameWindow->pollEvent(evt))
@@ -85,4 +91,19 @@ void WTGD::LoopManager::updateGameTime()
 	currentTime = timeManager.GetCurrentTime();
 	elapsedTime = TimeManager::GetElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());
 	lastTime = currentTime;
+}
+
+void WTGD::LoopManager::get_colliders(std::vector<GameObject*> gameobjects)
+{
+	for (GameObject* go : gameobjects)
+	{
+		Collider* collider = go->get_component<Collider>();
+		if (collider)
+		{
+			if (collider->is_enabled())
+			{
+				activeColliders.push_back(collider);
+			}
+		}
+	}
 }

@@ -11,6 +11,7 @@ WTGD::Transform::Transform() : Component("Transform")
     rotation = 0;
 
     transform = new sf::RectangleShape(scale);
+    transform->setOrigin(position / 2.0f);
 }
 
 WTGD::Transform::Transform(sf::Vector2f position, float rotation, sf::Vector2f scale) : Component("Transform")

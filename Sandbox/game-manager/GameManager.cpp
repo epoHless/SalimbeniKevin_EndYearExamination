@@ -54,11 +54,18 @@ void GameManager::initialize()
 {	
 	_manager->set_input_func([this](sf::Event) { this->set_events(); }, evt);
 
-	player = new WTGD::Character(new WTGD::JoystickController(), "Player");
+	player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
 	player->renderer->set_texture("res\\pacman.png");
 	player->transform->set_scale(100, 100);
 	player->transform->set_position(640, 360);
 	gameobjects.push_back(player);
+
+	WTGD::WorldObject* square = new WTGD::WorldObject("Cube", true);
+	square->transform->set_scale(100, 100);
+	square->transform->set_position(500, 100);
+	gameobjects.push_back(square);
+
+	_manager->get_colliders(gameobjects);
 
 	_manager->createWindow(1280, 720, "Title");
 

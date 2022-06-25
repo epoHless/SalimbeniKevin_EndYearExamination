@@ -5,6 +5,8 @@ WTGD::Character::Character(Controller* input, const std::string name, const bool
 	this->name = name;
 	this->is_active = is_active;
 
+	
+
 	controller = input;
 	add_component(controller);
 

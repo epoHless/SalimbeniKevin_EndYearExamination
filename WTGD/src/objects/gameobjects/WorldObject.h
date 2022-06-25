@@ -9,6 +9,7 @@
 
 #include "AreaObject.h"
 #include "../components/Renderer.h"
+#include "../components/Collider.h"
 
 namespace WTGD
 {
@@ -19,6 +20,8 @@ namespace WTGD
         ~WorldObject();
 
         Renderer* renderer;
+        Collider* collider;
+
     };
 }
 

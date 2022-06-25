@@ -13,6 +13,7 @@
 #include "../gameobjects/Gameobject.h"
 #include "../components/KeyboardController.h"
 #include "../components/JoystickController.h"
+#include "../components/Collider.h"
 #include <Character.h>
 #include <functional>
 
@@ -74,6 +75,8 @@ namespace WTGD
 		/// </summary>
 		void updateGameTime();
 
+		void get_colliders(std::vector<GameObject*> gameobjects);
+
 		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
 
 	//Private Members
@@ -89,6 +92,8 @@ namespace WTGD
 
 		std::function<void(sf::Event)> input_func = nullptr;
 		sf::Event input_event;
+
+		std::vector<Collider*> activeColliders;
 	};
 }
 
