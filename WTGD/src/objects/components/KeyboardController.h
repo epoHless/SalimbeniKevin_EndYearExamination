@@ -14,6 +14,9 @@ namespace WTGD
 	class KEYBOARD_CONTROLLER_API KeyboardController : public Controller
 	{
 	public:
+		/// <summary>
+		/// Defualt Keyboard Controller
+		/// </summary>
 		KeyboardController() = default;
 	protected:
 		// Inherited via Controller

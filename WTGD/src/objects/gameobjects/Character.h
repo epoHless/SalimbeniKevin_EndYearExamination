@@ -18,6 +18,12 @@ namespace WTGD
 	{
 		friend class LoopManager;
 	public:
+		/// <summary>
+		/// Default Character Constructor
+		/// </summary>
+		/// <param name="input">Input method (i.e. KeyboardController or JoystickController)</param>
+		/// <param name="name">This object name</param>
+		/// <param name="is_active">Should be enabled</param>
 		Character(Controller* input, const std::string name, const bool is_active = true);
 		//Character(const std::string name, const bool is_active = true);
 		~Character();
@@ -26,7 +32,10 @@ namespace WTGD
 		void on_update(const float delta) override;
 
 	public:
-
+		/// <summary>
+		/// Set the input method runtime
+		/// </summary>
+		/// <param name="input">the new input method</param>
 		void set_controller(Controller* input) 
 		{ 
 			controller = input;

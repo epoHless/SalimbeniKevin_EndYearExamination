@@ -16,10 +16,16 @@ namespace WTGD
 	{
 		friend class LoopManager;
 	public:
+		/// <summary>
+		/// Defualt Renderer Constructor
+		/// </summary>
 		Renderer();
 		explicit Renderer(std::string texture_path);
 		~Renderer() override;
-
+		/// <summary>
+		/// Sets the object's texture
+		/// </summary>
+		/// <param name="texture_path"></param>
 		void set_texture(std::string texture_path);
 
 	private:

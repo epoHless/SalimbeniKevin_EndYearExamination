@@ -17,9 +17,17 @@ namespace WTGD
 	{
 		friend class GameObject;
 	public:
+		/// <summary>
+		/// Component Default Constructor
+		/// </summary>
+		/// <param name="name">Component's name</param>
+		/// <param name="is_active">Should be active</param>
 		Component(const std::string name, const bool is_active = true) : Object(name, is_active){}
 		virtual ~Component() = default;
 
+		/// <summary>
+		/// Returns the owning GameObject
+		/// </summary>
 		[[nodiscard]] GameObject* get_owner()const { return owner; }
 
 	protected:

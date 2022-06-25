@@ -63,9 +63,16 @@ void GameManager::initialize()
 	WTGD::WorldObject* square = new WTGD::WorldObject("Cube", true);
 	square->transform->set_scale(100, 100);
 	square->transform->set_position(500, 100);
+
+	WTGD::Collider* coll = square->get_component<WTGD::Collider>();
+	coll->get_body()->setSize(coll->get_body()->getSize());
+	coll->get_body()->setOrigin(coll->get_body()->getSize() / 2.0f);
+	coll->get_body()->setPosition(coll->get_body()->getPosition());
+	coll->get_body()->setScale(coll->get_body()->getScale());
+
 	gameobjects.push_back(square);
 
-	_manager->get_colliders(gameobjects);
+	_manager->add_colliders(gameobjects);
 
 	_manager->createWindow(1280, 720, "Title");
 

@@ -24,19 +24,56 @@ namespace WTGD
 		~Transform() override;
 
 		//Setters
+		
+		/// <summary>
+		/// Sets this object current position
+		/// </summary>
+		/// <param name="x">X position</param>
+		/// <param name="y">Y position</param>
 		void set_position(float x, float y)const;
+		/// <summary>
+		/// Sets this object current position
+		/// </summary>
+		/// <param name="">Vector2f position</param>
 		void set_position(sf::Vector2f)const;
-
+		/// <summary>
+		/// Sets this object current rotation
+		/// </summary>
+		/// <param name="angle"></param>
 		void set_rotation(float angle)const;
-
+		/// <summary>
+		/// Sets this object current scale
+		/// </summary>
+		/// <param name="x">X scale</param>
+		/// <param name="y">Y scale</param>
 		void set_scale(float x, float y)const;
+		/// <summary>
+		/// Sets this object current scale
+		/// </summary>
+		/// <param name="">Vector2f scale</param>
 		void set_scale(sf::Vector2f)const;
 
 		//Getters
+
+		/// <summary>
+		/// Get this object current position
+		/// </summary>
+		/// <returns>The current position</returns>
 		sf::Vector2f get_position()const;
+		/// <summary>
+		/// Get this object current scale
+		/// </summary>
+		/// <returns>The current scale</returns>
 		sf::Vector2f get_scale()const;
+		/// <summary>
+		/// Get this object current rotation
+		/// </summary>
+		/// <returns>The current rotation</returns>
 		float get_rotation()const;
 
+		/// <summary>
+		/// Get this object transform
+		/// </summary>
 		[[nodiscard]] sf::RectangleShape* get_transform()const;		
 
 	private:

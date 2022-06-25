@@ -8,6 +8,7 @@ WTGD::Collider::Collider(sf::RectangleShape* body, bool enabled) : Component("Co
 	body->setSize(body->getSize());
 	body->setOrigin(body->getSize() / 2.0f);
 	body->setPosition(body->getPosition());
+	body->setScale(body->getScale());
 	enable_tick();
 }
 

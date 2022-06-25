@@ -16,9 +16,14 @@ namespace WTGD
 	{
 		friend class MovementComponent;
 	public:
+		/// <summary>
+		/// Controller Default Constructor
+		/// </summary>
 		Controller();
 		~Controller() override;
-
+		/// <summary>
+		/// Returns the current axis direction 
+		/// </summary>
 		[[nodiscard]] sf::Vector2f get_direction_vector()const { return sf::Vector2f(x_axis, y_axis); }
 
 	protected:

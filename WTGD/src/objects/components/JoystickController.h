@@ -14,6 +14,9 @@ namespace WTGD
 	class JOYSTICK_CONTROLLER_API JoystickController : public Controller
 	{
 	public:
+		/// <summary>
+		/// Default Joystick Constructor
+		/// </summary>
 		JoystickController() = default;
 	protected:
 		// Inherited via Controller

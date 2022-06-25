@@ -15,6 +15,11 @@ namespace WTGD
 	class AREA_OBJECT_API AreaObject : public GameObject
 	{
 	public:
+		/// <summary>
+		/// AreaObject Default Constructor
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="is_active"></param>
 		AreaObject(const std::string name, const bool is_active);
 		~AreaObject();
 

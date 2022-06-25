@@ -74,9 +74,16 @@ namespace WTGD
 		/// Updates the game time
 		/// </summary>
 		void updateGameTime();
-
-		void get_colliders(std::vector<GameObject*> gameobjects);
-
+		/// <summary>
+		/// Adds the GameObjects colliders to the activeColliders vector
+		/// </summary>
+		/// <param name="gameobjects">GameObjects' colliders to add</param>
+		void add_colliders(std::vector<GameObject*> gameobjects);
+		/// <summary>
+		/// Set the desired event to check during runtime
+		/// </summary>
+		/// <param name="func">Function to point</param>
+		/// <param name="evt">sf::Event to pass</param>
 		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
 
 	//Private Members

@@ -67,7 +67,7 @@ void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 		Collider* collider = go->get_component<Collider>();
 		if (collider)
 		{
-			collider->check_collision(activeColliders, .5f);
+			collider->check_collision(activeColliders, 0.5f);
 		}
 	}
 }
@@ -93,7 +93,7 @@ void WTGD::LoopManager::updateGameTime()
 	lastTime = currentTime;
 }
 
-void WTGD::LoopManager::get_colliders(std::vector<GameObject*> gameobjects)
+void WTGD::LoopManager::add_colliders(std::vector<GameObject*> gameobjects)
 {
 	for (GameObject* go : gameobjects)
 	{

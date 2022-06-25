@@ -16,6 +16,11 @@ namespace WTGD
     class WORLD_OBJECT_API WorldObject : public AreaObject
     {
     public:
+        /// <summary>
+        /// WorldObject Default Constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="is_active"></param>
         WorldObject(const std::string name, const bool is_active);
         ~WorldObject();
 
