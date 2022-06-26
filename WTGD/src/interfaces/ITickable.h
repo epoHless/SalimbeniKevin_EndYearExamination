@@ -32,6 +32,8 @@ namespace WTGD
 		/// </summary>
 		/// <param name="delta"></param>
 		virtual void on_update(const float delta) = 0;
+		virtual void on_fixed_update(const float delta_time) = 0;
+
 
 	private:
 		bool tickable = true;

@@ -17,7 +17,7 @@ namespace WTGD
 		/// <summary>
 		/// Defualt Keyboard Controller
 		/// </summary>
-		KeyboardController() = default;
+		KeyboardController();
 	protected:
 		// Inherited via Controller
 		virtual void on_update(const float delta) override;

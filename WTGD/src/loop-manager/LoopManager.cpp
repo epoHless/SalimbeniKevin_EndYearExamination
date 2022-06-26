@@ -64,11 +64,49 @@ void WTGD::LoopManager::update(std::vector<GameObject*> gameobjects)
 	for (GameObject* go : gameobjects)
 	{
 		if (go->is_tick_enabled() && go->is_active) go->on_update(elapsedTime);
+	}
+}
+
+void WTGD::LoopManager::fixed_update(std::vector<GameObject*> gameobjects)
+{
+	for (GameObject* go : gameobjects)
+	{
+		if (go->is_tick_enabled() && go->is_active) go->on_fixed_update(elapsedTime);
 
 		Collider* collider = go->get_component<Collider>();
 		if (collider)
 		{
-			collider->check_collision(activeColliders, 0.5f);
+			collider->check_collision(activeColliders);
+		}
+	}
+}
+
+void WTGD::LoopManager::run(std::vector<GameObject*> gameobjects)
+{
+
+	lastTime = timeManager.GetCurrentTime();
+	while (gameWindow->isOpen())
+	{
+		updateGameTime();
+		printf("FPS %i\n", getFPS());
+
+		pollEvents();
+
+		if (fixedUpdateEnabled)
+		{
+			while (lag >= msForFixedUpdate)
+			{
+				fixed_update(gameobjects);
+				lag -= msForFixedUpdate;
+			}
+		}
+
+		update(gameobjects);
+		draw(gameobjects);
+
+		if (isFpsLimited)
+		{
+			sf::sleep(sf::seconds(1.0f / maxFPS));
 		}
 	}
 }
@@ -92,6 +130,7 @@ void WTGD::LoopManager::updateGameTime()
 	currentTime = timeManager.GetCurrentTime();
 	elapsedTime = TimeManager::GetElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());
 	lastTime = currentTime;
+	lag += elapsedTime;
 }
 
 void WTGD::LoopManager::add_colliders(std::vector<GameObject*> gameobjects)

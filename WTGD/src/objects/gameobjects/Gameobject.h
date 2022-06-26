@@ -123,6 +123,7 @@ namespace WTGD
 	protected:
 		// Inherited via ITickable
 		virtual void on_update(const float delta) override;
+		virtual void on_fixed_update(const float delta_time) override;
 
 	private:
 		std::vector<Component*> components;

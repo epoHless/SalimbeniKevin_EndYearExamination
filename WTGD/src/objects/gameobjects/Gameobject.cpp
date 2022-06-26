@@ -35,3 +35,11 @@ void WTGD::GameObject::on_update(const float delta_time)
 
 	printf("Gameobject : %s is active | ", get_name().c_str());
 }
+
+void WTGD::GameObject::on_fixed_update(const float delta_time)
+{
+	for (auto item : components)
+	{
+		if (item->is_active && item->is_tick_enabled()) { item->on_fixed_update(delta_time); }
+	}
+}

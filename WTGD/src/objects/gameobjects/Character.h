@@ -30,6 +30,7 @@ namespace WTGD
 
 	protected:
 		void on_update(const float delta) override;
+		void on_fixed_update(const float delta_time) override;
 
 	public:
 		/// <summary>

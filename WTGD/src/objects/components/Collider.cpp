@@ -12,7 +12,7 @@ WTGD::Collider::Collider(sf::RectangleShape* body, bool enabled) : Component("Co
 	enable_tick();
 }
 
-bool WTGD::Collider::check_collision(std::vector<Collider*> others, float push)
+bool WTGD::Collider::check_collision(std::vector<Collider*> others)
 {
 	for (Collider* other : others)
 	{

@@ -14,4 +14,7 @@ void WTGD::Controller::on_update(const float delta)
 {
 }
 
-
+void WTGD::Controller::on_fixed_update(const float delta_time)
+{
+	WTGD::Component::on_fixed_update(delta_time);
+}

@@ -8,3 +8,8 @@ void WTGD::Component::on_update(const float delta)
 
 	//printf("Component : %s is running! | ", this->get_name().c_str());
 }
+
+void WTGD::Component::on_fixed_update(const float delta_time)
+{
+
+}

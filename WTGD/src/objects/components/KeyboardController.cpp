@@ -1,5 +1,9 @@
 #include "KeyboardController.h"
 
+WTGD::KeyboardController::KeyboardController()
+{
+}
+
 void WTGD::KeyboardController::on_update(const float delta)
 {
 	Controller::on_update(delta);

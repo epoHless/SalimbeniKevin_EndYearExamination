@@ -32,6 +32,8 @@ namespace WTGD
 		float x_axis, y_axis, current_rotation = 0.0f;
 
 		virtual void on_update(const float delta) override;
+		void on_fixed_update(const float delta_time) override;
+
 	};
 }
 

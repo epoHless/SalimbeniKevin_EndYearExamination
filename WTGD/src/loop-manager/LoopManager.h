@@ -66,6 +66,11 @@ namespace WTGD
 		/// </summary>
 		/// <param name="gameobjects"></param>
 		void update(std::vector<GameObject*> gameobjects);
+
+		void fixed_update(std::vector<GameObject*> gameobjects);
+
+		void run(std::vector<GameObject*> gameobjects);
+
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
@@ -98,6 +103,10 @@ namespace WTGD
 		WTGD::TimeManager timeManager;
 		float elapsedTime = 0.0f;
 		sf::Time lastTime, currentTime;
+
+		float lag = 0.0f;
+		bool fixedUpdateEnabled = true;
+		float msForFixedUpdate = 0.016f;
 
 		std::function<void(sf::Event)> input_func = nullptr;
 		sf::Event input_event;

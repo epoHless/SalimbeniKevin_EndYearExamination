@@ -5,22 +5,7 @@ void GameManager::run()
 {
 	initialize();
 
-	_manager->lastTime = _manager->timeManager.GetCurrentTime();
-	while (_manager->gameWindow->isOpen())
-	{
-		_manager->updateGameTime();
-		std::cout << "FPS: " << _manager->getFPS() << std::endl;
-
-		_manager->pollEvents();
-
-		_manager->update(gameobjects);
-		_manager->draw(gameobjects);
-
-		if (_manager->isFpsLimited)
-		{
-			sf::sleep(sf::seconds(1.0f / _manager->maxFPS));
-		}
-	}
+	_manager->run(gameobjects);
 }
 
 void GameManager::initialize()
@@ -32,7 +17,6 @@ void GameManager::initialize()
 	player->transform->set_position(640, 360);
 	gameobjects.push_back(player);
 
-	player->remove_component<WTGD::KeyboardController>();
 
 	WTGD::WorldObject* square = new WTGD::WorldObject("Cube", true);
 	square->transform->set_scale(100, 100);

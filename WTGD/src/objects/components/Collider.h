@@ -30,7 +30,7 @@ namespace WTGD
 		/// <param name="others">other octive colliders</param>
 		/// <param name="push">push force</param>
 		/// <returns>Overlap condition</returns>
-		bool check_collision(std::vector<Collider*> others, float push);
+		bool check_collision(std::vector<Collider*> others);
 		/// <summary>
 		/// Get the collider position
 		/// </summary>

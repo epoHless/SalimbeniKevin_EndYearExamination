@@ -3,9 +3,7 @@
 WTGD::Character::Character(Controller* input, const std::string name, const bool is_active) : WorldObject(name, is_active)
 {
 	this->name = name;
-	this->is_active = is_active;
-
-	
+	this->is_active = is_active;	
 
 	controller = input;
 	add_component(controller);
@@ -15,18 +13,6 @@ WTGD::Character::Character(Controller* input, const std::string name, const bool
 	movementComponent->transform = transform;
 	add_component(movementComponent);
 }
-
-//WTGD::Character::Character(const std::string name, const bool is_active) : WorldObject(name, is_active)
-//{
-//	this->name = name;
-//	this->is_active = is_active;
-//
-//	movementComponent = new MovementComponent();
-//	movementComponent->controller = controller;
-//	movementComponent->transform = transform;
-//	movementComponent->speed = 100;
-//	add_component(movementComponent);
-//}
 
 WTGD::Character::~Character()
 {
@@ -39,4 +25,9 @@ WTGD::Character::~Character()
 void WTGD::Character::on_update(const float delta)
 {
 	WorldObject::on_update(delta);
+}
+
+void WTGD::Character::on_fixed_update(const float delta_time)
+{
+	WTGD::WorldObject::on_fixed_update(delta_time);
 }
