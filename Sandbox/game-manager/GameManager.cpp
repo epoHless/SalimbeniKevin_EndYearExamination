@@ -32,6 +32,8 @@ void GameManager::initialize()
 	player->transform->set_position(640, 360);
 	gameobjects.push_back(player);
 
+	player->remove_component<WTGD::KeyboardController>();
+
 	WTGD::WorldObject* square = new WTGD::WorldObject("Cube", true);
 	square->transform->set_scale(100, 100);
 	square->transform->set_position(500, 100);

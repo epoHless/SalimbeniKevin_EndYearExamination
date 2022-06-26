@@ -42,6 +42,7 @@ namespace WTGD
 		/// </summary>
 		/// <param name="component">The component to add</param>
 		void add_component(Component* component);
+
 		/// <summary>
 		/// DEPRECATED | Remove a component from this object
 		/// </summary>
@@ -54,9 +55,9 @@ namespace WTGD
 		/// <typeparam name="T">Component Class</typeparam>
 		/// <typeparam name=""></typeparam>
 		template<class T, class = Component>
-		void remove_component()const
+		void remove_component()
 		{
-			/*if (components.size() == 0) return;
+			if (components.size() == 0) return;
 
 			for (Component* comp : components)
 			{
@@ -67,9 +68,11 @@ namespace WTGD
 					printf("no component found!");
 					continue;
 				}
-				else				
-					components.erase(val);				
-			}*/
+				else
+				{
+					components.erase(std::remove(components.begin(), components.end(), val), components.end());
+				}
+			}
 		}
 
 		/// <summary>
