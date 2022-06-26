@@ -59,9 +59,6 @@ namespace WTGD
 		/// </summary>
 		[[nodiscard]] sf::RectangleShape* get_body()const { return body; }
 
-	protected:
-		virtual void on_update(const float delta) override;
-
 	private:
 		sf::RectangleShape* body;
 		bool collision_enabled;

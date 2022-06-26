@@ -8,6 +8,7 @@ WTGD::LoopManager::~LoopManager()
 
 void WTGD::LoopManager::createWindow(const float width, const float height, const char* title)
 {
+	set_input_func([this](sf::Event) { this->base_input_func(); }, input_event);
 	gameWindow = new sf::RenderWindow(sf::VideoMode(width, height), title);
 }
 

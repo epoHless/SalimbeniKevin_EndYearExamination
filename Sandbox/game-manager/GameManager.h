@@ -24,12 +24,11 @@ public:
 	/// </summary>
 	void run();
 
-	void set_events();
-	void set_events_b();
-
-
 //Private Functions
 private:
+	/// <summary>
+	/// Initialize GameObjects
+	/// </summary>
 	void initialize();
 
 //Private Members
@@ -39,8 +38,6 @@ private:
 
 	WTGD::LoopManager* _manager = nullptr;
 	sf::Event evt;
-
-	WTGD::Character* player;
 };
 
 #endif

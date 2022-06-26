@@ -1,4 +1,5 @@
 #include "MovementComponent.h"
+#include "Collider.h"
 
 WTGD::MovementComponent::MovementComponent() : Component("Movement Component")
 {

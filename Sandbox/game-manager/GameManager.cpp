@@ -23,38 +23,10 @@ void GameManager::run()
 	}
 }
 
-void GameManager::set_events()
-{
-
-	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
-	{
-		_manager->set_input_func([this](sf::Event) { this->set_events_b(); }, this->evt);
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-	{
-		printf("AAAAAAAAAAAAAAAAAAAAA\n");
-	}*/
-}
-
-void GameManager::set_events_b()
-{
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-	//{
-	//	_manager->set_input_func([this](sf::Event) { this->set_events(); }, this->evt);
-	//}
-
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-	//{
-	//	printf("BBBBBBBBBBBBBBBBBBBBB\n");
-	//}
-}
-
 void GameManager::initialize()
 {	
-	_manager->set_input_func([this](sf::Event) { this->set_events(); }, evt);
 
-	player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
+	WTGD::Character* player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
 	player->renderer->set_texture("res\\pacman.png");
 	player->transform->set_scale(100, 100);
 	player->transform->set_position(640, 360);
@@ -64,22 +36,15 @@ void GameManager::initialize()
 	square->transform->set_scale(100, 100);
 	square->transform->set_position(500, 100);
 
-	WTGD::Collider* coll = square->get_component<WTGD::Collider>();
-	coll->get_body()->setSize(coll->get_body()->getSize());
-	coll->get_body()->setOrigin(coll->get_body()->getSize() / 2.0f);
-	coll->get_body()->setPosition(coll->get_body()->getPosition());
-	coll->get_body()->setScale(coll->get_body()->getScale());
+	WTGD::WorldObject* square1 = new WTGD::WorldObject("Cube", true);
+	square1->transform->set_scale(100, 100);
+	square1->transform->set_position(100, 100);
 
 	gameobjects.push_back(square);
+	gameobjects.push_back(square1);
 
 	_manager->add_colliders(gameobjects);
 
 	_manager->createWindow(1280, 720, "Title");
-
-	/* To be filled with
-	
-		add gameobjects to the game
-
-	*/
 }
 

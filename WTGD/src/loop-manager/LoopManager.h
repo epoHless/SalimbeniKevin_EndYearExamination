@@ -86,6 +86,8 @@ namespace WTGD
 		/// <param name="evt">sf::Event to pass</param>
 		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
 
+		void base_input_func() {}
+
 	//Private Members
 	public:
 		sf::RenderWindow* gameWindow;
