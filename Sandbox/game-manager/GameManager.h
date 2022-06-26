@@ -2,6 +2,7 @@
 #define GAME_MANAGER_H
 
 #include <LoopManager.h>
+#include "../utilities/Utility.h"
 
 class GameManager
 {

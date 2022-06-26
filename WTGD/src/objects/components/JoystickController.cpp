@@ -39,7 +39,15 @@ void WTGD::JoystickController::on_update(const float delta)
 			x_axis = 0;
 		}
 
-		
+		if (sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::PovX) > 50.0f)
+		{
+			current_rotation += 2.0f;
+		}
+
+		if (sf::Joystick::getAxisPosition(0, sf::Joystick::Axis::PovX) < -50.0f)
+		{
+			current_rotation -= 2.0f;
+		}
 
 		sf::Joystick::update();
 

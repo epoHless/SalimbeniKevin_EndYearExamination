@@ -66,11 +66,16 @@ namespace WTGD
 		/// </summary>
 		/// <param name="gameobjects"></param>
 		void update(std::vector<GameObject*> gameobjects);
-
+		/// <summary>
+		/// Updates the registeres GameObjects on the screen with a fixed update
+		/// </summary>
+		/// <param name="gameobjects"></param>
 		void fixed_update(std::vector<GameObject*> gameobjects);
-
+		/// <summary>
+		/// Call this function to run the main loop
+		/// </summary>
+		/// <param name="gameobjects"></param>
 		void run(std::vector<GameObject*> gameobjects);
-
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
@@ -84,6 +89,7 @@ namespace WTGD
 		/// </summary>
 		/// <param name="gameobjects">GameObjects' colliders to add</param>
 		void add_colliders(std::vector<GameObject*> gameobjects);
+
 		/// <summary>
 		/// Set the desired event to check during runtime
 		/// </summary>
@@ -92,6 +98,12 @@ namespace WTGD
 		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
 
 		void base_input_func() {}
+
+		/// <summary>
+		/// Set the target frames for the fixed update
+		/// </summary>
+		/// <param name="new_ms"></param>
+		void set_ms_for_fixed_update(float new_ms) { msForFixedUpdate = new_ms; }
 
 	//Private Members
 	public:

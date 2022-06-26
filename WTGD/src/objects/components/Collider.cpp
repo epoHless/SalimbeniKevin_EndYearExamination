@@ -20,7 +20,7 @@ bool WTGD::Collider::check_collision(std::vector<Collider*> others)
 		{
 			if (body->getGlobalBounds().intersects(other->body->getGlobalBounds()))
 			{
-				printf("Colliding");
+				printf("%s is colliding colliding\n", this->name.c_str());
 				return true;
 			}
 			else 

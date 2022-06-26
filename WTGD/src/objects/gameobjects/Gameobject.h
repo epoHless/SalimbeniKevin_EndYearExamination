@@ -120,10 +120,15 @@ namespace WTGD
 			return output;
 		}
 
+		void set_tag(std::string new_tag) { tag = new_tag; }
+		[[nodiscard]] std::string get_tag()const { return tag; }
+
 	protected:
 		// Inherited via ITickable
 		virtual void on_update(const float delta) override;
 		virtual void on_fixed_update(const float delta_time) override;
+
+		std::string tag;
 
 	private:
 		std::vector<Component*> components;

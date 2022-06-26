@@ -2,12 +2,14 @@
 
 WTGD::GameObject::GameObject(const std::string name, const bool is_active) : Object(name, is_active)
 {
+	this->tag = "GameObject";
 	this->name = name;
 	this->is_active = is_active;
 }
 
 WTGD::GameObject::GameObject(const std::string name, const std::vector<Component*> components, const bool is_active) : Object(name, is_active)
 {
+	this->tag = "GameObject";
 	this->name = name;
 	this->components = components;
 	this->is_active = is_active;
@@ -33,7 +35,7 @@ void WTGD::GameObject::on_update(const float delta_time)
 		if (item->is_active && item->is_tick_enabled()) { item->on_update(delta_time); }
 	}
 
-	printf("Gameobject : %s is active | ", get_name().c_str());
+	printf("Gameobject : %s is active , with tag %s \n ", get_name().c_str(), get_tag().c_str());
 }
 
 void WTGD::GameObject::on_fixed_update(const float delta_time)
