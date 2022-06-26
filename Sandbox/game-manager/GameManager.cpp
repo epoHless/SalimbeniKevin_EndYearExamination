@@ -35,11 +35,11 @@ void GameManager::initialize()
 	gameobjects.push_back(square);
 	gameobjects.push_back(square1);
 
-	auto vals = WTGD::Utility::get_gameobjects_by_tag(gameobjects, "Enviroment");
+	auto vals = WTGD::Utility::get_gameobjects_by_class<WTGD::Character>(gameobjects);
 
 	for (WTGD::GameObject* obj : vals)
 	{
-		printf("Found object tagged %s named %s", obj->get_tag().c_str(), obj->get_name().c_str());
+		printf("Found object of class named %s", obj->get_name().c_str());
 	}
 
 	_manager->add_colliders(gameobjects);

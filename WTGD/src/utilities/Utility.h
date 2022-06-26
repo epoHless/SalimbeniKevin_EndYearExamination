@@ -34,7 +34,7 @@ namespace WTGD
 		static std::vector<T*> get_gameobjects_by_class(std::vector<GameObject*> objects)
 		{
 			std::vector<T*> output;
-			if (objects.size() == 0) return;
+			if (objects.size() == 0) return output;
 
 			for (GameObject* obj : objects)
 			{
