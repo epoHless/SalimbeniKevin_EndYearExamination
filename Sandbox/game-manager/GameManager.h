@@ -15,7 +15,10 @@ public:
 	/// <summary>
 	/// Default Loop Manager Destructor
 	/// </summary>
-	~GameManager(){};
+	~GameManager()
+	{
+		delete _manager;
+	};
 
 //Public Functions
 public:
@@ -36,7 +39,6 @@ private:
 private:
 
 	std::vector<WTGD::GameObject*> gameobjects;
-
 	WTGD::LoopManager* _manager = nullptr;
 };
 
