@@ -96,7 +96,9 @@ namespace WTGD
 		/// <param name="func">Function to point</param>
 		/// <param name="evt">sf::Event to pass</param>
 		void set_input_func(std::function<void(sf::Event)> func, sf::Event evt) { input_func = func; input_event = evt; }
-
+		/// <summary>
+		/// Empty function used when the custom input function is unused
+		/// </summary>
 		void base_input_func() {}
 
 		/// <summary>

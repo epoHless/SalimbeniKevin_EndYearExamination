@@ -76,7 +76,7 @@ namespace WTGD
 		}
 
 		/// <summary>
-		/// Get a component
+		/// Get a component by class
 		/// </summary>
 		/// <typeparam name="T">Component class</typeparam>
 		/// <typeparam name=""></typeparam>

@@ -30,12 +30,10 @@ void GameManager::initialize()
 	square1->transform->set_position(100, 100);
 	square1->set_tag("Enviroment");
 
-
-
 	gameobjects.push_back(square);
 	gameobjects.push_back(square1);
 
-	auto vals = WTGD::Utility::get_gameobjects_by_class<WTGD::Character>(gameobjects);
+	auto vals = WTGD::Utility::get_gameobjects_by_tag(gameobjects, "Player");
 
 	for (WTGD::GameObject* obj : vals)
 	{

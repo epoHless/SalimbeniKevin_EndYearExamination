@@ -83,7 +83,6 @@ void WTGD::LoopManager::fixed_update(std::vector<GameObject*> gameobjects)
 
 void WTGD::LoopManager::run(std::vector<GameObject*> gameobjects)
 {
-
 	lastTime = timeManager.GetCurrentTime();
 	while (gameWindow->isOpen())
 	{

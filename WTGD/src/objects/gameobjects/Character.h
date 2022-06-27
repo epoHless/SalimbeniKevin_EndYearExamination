@@ -25,7 +25,6 @@ namespace WTGD
 		/// <param name="name">This object name</param>
 		/// <param name="is_active">Should be enabled</param>
 		Character(Controller* input, const std::string name, const bool is_active = true);
-		//Character(const std::string name, const bool is_active = true);
 		~Character();
 
 	protected:

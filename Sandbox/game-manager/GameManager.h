@@ -38,7 +38,6 @@ private:
 	std::vector<WTGD::GameObject*> gameobjects;
 
 	WTGD::LoopManager* _manager = nullptr;
-	sf::Event evt;
 };
 
 #endif

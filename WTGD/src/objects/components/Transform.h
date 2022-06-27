@@ -15,12 +15,18 @@ namespace WTGD
 	class TRANSFORM_API Transform : public Component
 	{
 	public:
+		/// <summary>
+		/// Default Transform Constructor
+		/// </summary>
 		Transform();
 		explicit Transform(
 			sf::Vector2f position,
 			float rotation,
 			sf::Vector2f scale
 		);
+		/// <summary>
+		/// Default Transform Destructor
+		/// </summary>
 		~Transform() override;
 
 		//Setters
@@ -85,30 +91,48 @@ namespace WTGD
 
 	public:
 		//Operator overloads
+
+		/// <summary>
+		/// Adds B to this position
+		/// </summary>
+		/// <param name="b">Value to add</param>
 		void operator+=(const sf::Vector2f b)
 		{
 			position.x += b.x;
 			position.y += b.y;
 		}
-
+		/// <summary>
+		/// Subtract B to this position
+		/// </summary>
+		/// <param name="b">Value to subtract</param>
 		void operator-=(const sf::Vector2f b)
 		{
 			position.x -= b.x;
 			position.y -= b.y;
 		}
 
+		/// <summary>
+		/// Multiplies B to this position
+		/// </summary>
+		/// <param name="b">Value to multiply</param>
 		void operator*=(const sf::Vector2f b)
 		{
 			position.x *= b.x;
 			position.y *= b.y;
 		}
-
+		/// <summary>
+		/// Divides B to this position
+		/// </summary>
+		/// <param name="b">Value to divide</param>
 		void operator/=(const sf::Vector2f b)
 		{
 			position.x /= b.x;
 			position.y /= b.y;
 		}
-
+		/// <summary>
+		/// Adds B to this position
+		/// </summary>
+		/// <param name="b">Value to add</param>
 		sf::Vector2f operator+(const sf::Vector2f& b)
 		{
 			sf::Vector2f temp = position;
@@ -117,7 +141,10 @@ namespace WTGD
 
 			return temp;
 		}
-
+		/// <summary>
+		/// Subtract B to this position
+		/// </summary>
+		/// <param name="b">Value to subtract</param>
 		sf::Vector2f operator-(const sf::Vector2f& b)
 		{
 			sf::Vector2f temp = position;
@@ -126,7 +153,10 @@ namespace WTGD
 
 			return temp;
 		}
-
+		/// <summary>
+		/// Multiplies B to this position
+		/// </summary>
+		/// <param name="b">Value to multiply</param>
 		sf::Vector2f operator*(const sf::Vector2f& b)
 		{
 			sf::Vector2f temp = position;
@@ -135,7 +165,10 @@ namespace WTGD
 
 			return temp;
 		}
-
+		/// <summary>
+		/// Divides B to this position
+		/// </summary>
+		/// <param name="b">Value to divide</param>
 		sf::Vector2f operator/(const sf::Vector2f& b)
 		{
 			sf::Vector2f temp = position;
@@ -143,27 +176,39 @@ namespace WTGD
 			temp.y = position.y / b.y;
 
 			return temp;
-		}
-
+		}		
+		/// <summary>
+		/// Decrements the current vector
+		/// </summary>
+		/// <returns></returns>
 		sf::Vector2f& operator--()
 		{
 			--position.x; --position.y;
 			return position;
 		}
-
+		/// <summary>
+		/// Decrements the current vector
+		/// </summary>
+		/// <returns></returns>
 		sf::Vector2f operator--(int)
 		{
 			sf::Vector2f temp = position;
 			operator--();
 			return temp;
 		}
-
+		/// <summary>
+		/// Increments the current vector
+		/// </summary>
+		/// <returns></returns>
 		sf::Vector2f& operator++()
 		{
 			++position.x; ++position.y;
 			return position;
 		}
-
+		/// <summary>
+		/// Increments the current vector
+		/// </summary>
+		/// <returns></returns>
 		sf::Vector2f operator++(int)
 		{
 			sf::Vector2f temp = position;

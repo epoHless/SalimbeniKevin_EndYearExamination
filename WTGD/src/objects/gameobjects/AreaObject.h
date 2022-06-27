@@ -21,6 +21,9 @@ namespace WTGD
 		/// <param name="name"></param>
 		/// <param name="is_active"></param>
 		AreaObject(const std::string name, const bool is_active);
+		/// <summary>
+		/// AreaObject Default Destructor
+		/// </summary>
 		~AreaObject();
 
 		Transform* transform;

@@ -15,6 +15,9 @@ namespace WTGD
 	{
 	public:
 
+		/// <summary>
+		/// Returns a vector with pointers to GameObject (s) with the given tag
+		/// </summary>
 		[[nodiscard]] static std::vector<GameObject*> get_gameobjects_by_tag(std::vector<GameObject*> objects, std::string tag)
 		{
 			std::vector<GameObject*> output;
@@ -30,6 +33,9 @@ namespace WTGD
 			return output;
 		}
 
+		/// <summary>
+		/// Returns a vector with pointers to GameObject (s) with the given class (derived included as of for now)
+		/// </summary>
 		template<class T, class = GameObject>
 		static std::vector<T*> get_gameobjects_by_class(std::vector<GameObject*> objects)
 		{
