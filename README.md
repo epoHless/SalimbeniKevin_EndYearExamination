@@ -1,4 +1,4 @@
-# <img src="WTGDLogo.png" alt="drawing" width="100"/> **WTGD Framework**
+# <img src="WTGDLogo.png" width="100"/> **WTGD Framework**
  A **SFML-ready framework** that supports the addition of **gameobjects** with **attachable components**.
 
 <br>
