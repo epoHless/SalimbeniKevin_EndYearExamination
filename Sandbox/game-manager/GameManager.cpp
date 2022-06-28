@@ -12,7 +12,7 @@ void GameManager::initialize()
 {	
 
 	WTGD::Character* player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
-	player->renderer->set_texture("res\\pacman.png");
+	//player->renderer->set_texture("res\\pacman.png");
 	player->transform->set_scale(100, 100);
 	player->transform->set_position(640, 360);
 	player->set_tag("Player");

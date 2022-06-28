@@ -47,7 +47,7 @@ namespace WTGD
 		Controller* controller;
 		Transform* transform;
 
-		float movement_speed = 10.0f;
+		float movement_speed = 100.0f;
 		float rotation_speed = 5.0f;
 
 		void on_update(const float delta) override;
