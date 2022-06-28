@@ -27,7 +27,7 @@
 ## Supported Functionalities
 ---
 As of for now the WTGD Framework supports:
-[`GameObjects`](/doc/html/de/d02/class_w_t_g_d_1_1_game_object.html), [`Components`](/doc/html/d7/df0/class_w_t_g_d_1_1_component.html), [`Movement`](/doc/html/de/d23/class_w_t_g_d_1_1_movement_component.html), [`Keyboard Controller`](/doc/html/dd/d5b/class_w_t_g_d_1_1_keyboard_controller.html), [`Joystick Controller`](/doc/html/d3/d0c/class_w_t_g_d_1_1_joystick_controller.html), [`Simple Collision Detection`](/doc/html/d1/d87/class_w_t_g_d_1_1_collider.html), [`Transform`](/doc/html/d7/df8/class_w_t_g_d_1_1_transform.html), [`Utility Static Struct`](/doc/html/de/d54/struct_w_t_g_d_1_1_utility.html).
+[`GameObjects`](doc/html/de/d02/class_w_t_g_d_1_1_game_object.html), [`Components`](doc/html/d7/df0/class_w_t_g_d_1_1_component.html), [`Movement`](doc/html/de/d23/class_w_t_g_d_1_1_movement_component.html), [`Keyboard Controller`](doc/html/dd/d5b/class_w_t_g_d_1_1_keyboard_controller.html), [`Joystick Controller`](doc/html/d3/d0c/class_w_t_g_d_1_1_joystick_controller.html), [`Simple Collision Detection`](doc/html/d1/d87/class_w_t_g_d_1_1_collider.html), [`Transform`](doc/html/d7/df8/class_w_t_g_d_1_1_transform.html), [`Utility Static Struct`](doc/html/de/d54/struct_w_t_g_d_1_1_utility.html).
 <br>
 The framework also provides simple ready-to-play classes such as: `Character` and `WorldObject`.
 <br>
