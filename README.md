@@ -11,7 +11,6 @@
 <br>
 
 ## **Installation**
----
 > Run `installation.bat` present in the release folder, it will automatically generate a SFML ready-to-go project and link all the necessary files in order to get you started.
 <br>
 >You will have to **type** your desired **Visual Studio version** in order to generate the demo solution **(as of for now only 2019 and 2022 are supported)**
@@ -23,7 +22,6 @@
 <br>
 
 ## **Supported Functionalities**
----
 As of for now the WTGD Framework supports:
 `GameObjects`, `Components`, `Movement`, `Keyboard Controller`, `Joystick Controller`, `Simple Collision Detection`, `Transform`, `Utility Static Struct`.
 <br>
@@ -35,7 +33,6 @@ All classes are extendable, providing room for improvement and creativity.
 <br>
 
 ## **Get Started**
----
 <br>
 
 Before starting **make sure you followed** all the necessary steps in [**Installation**](#installation).
