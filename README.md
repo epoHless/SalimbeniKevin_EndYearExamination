@@ -11,11 +11,8 @@
 
 ## **Installation**
 > Run `installation.bat` present in the release folder, it will automatically generate a SFML ready-to-go project and link all the necessary files in order to get you started.
-<br>
->You will have to **type** your desired **Visual Studio version** in order to generate the demo solution **(as of for now only 2019 and 2022 are supported)**
-<br>
+>You will have to **type** your desired **Visual Studio version** in order to generate the demo solution **(as of for now only 2019 and 2022 are supported)**;
 >Once the solution is **generated**, the `installation.bat` will **copy** all the necessary `.dll` files into the output folder in order to let the program compile.
-<br>
 >You may now open the solution and **get started.**
 
 <br>
