@@ -1,18 +1,16 @@
-# **WTGD Framework**
+# <img src="WTGDLogo.png" alt="drawing" width="100"/> **WTGD Framework**
  A **SFML-ready framework** that supports the addition of **gameobjects** with **attachable components**.
 
 <br>
 
-## Contents
----
-- [Installation](#installation)
-- [Supported Functionalities](#basic-functionalities)
-- [Get Started](#get-started)
+# **Contents**
+[**Installation**](#installation) - [**Supported Functionalities**](#basic-functionalities) - [**Get Started**](#get-started)  - [**Official Documentation**](https://wtgd-framework.000webhostapp.com/)
+
 
 
 <br>
 
-## Installation
+## **Installation**
 ---
 > Run `installation.bat` present in the release folder, it will automatically generate a SFML ready-to-go project and link all the necessary files in order to get you started.
 <br>
@@ -24,10 +22,10 @@
 
 <br>
 
-## Supported Functionalities
+## **Supported Functionalities**
 ---
 As of for now the WTGD Framework supports:
-[`GameObjects`](doc/html/de/d02/class_w_t_g_d_1_1_game_object.html), [`Components`](doc/html/d7/df0/class_w_t_g_d_1_1_component.html), [`Movement`](doc/html/de/d23/class_w_t_g_d_1_1_movement_component.html), [`Keyboard Controller`](doc/html/dd/d5b/class_w_t_g_d_1_1_keyboard_controller.html), [`Joystick Controller`](doc/html/d3/d0c/class_w_t_g_d_1_1_joystick_controller.html), [`Simple Collision Detection`](doc/html/d1/d87/class_w_t_g_d_1_1_collider.html), [`Transform`](doc/html/d7/df8/class_w_t_g_d_1_1_transform.html), [`Utility Static Struct`](doc/html/de/d54/struct_w_t_g_d_1_1_utility.html).
+`GameObjects`, `Components`, `Movement`, `Keyboard Controller`, `Joystick Controller`, `Simple Collision Detection`, `Transform`, `Utility Static Struct`.
 <br>
 The framework also provides simple ready-to-play classes such as: `Character` and `WorldObject`.
 <br>
@@ -36,7 +34,7 @@ All classes are extendable, providing room for improvement and creativity.
 
 <br>
 
-## Get Started
+## **Get Started**
 ---
 <br>
 
@@ -45,7 +43,7 @@ Before starting **make sure you followed** all the necessary steps in [**Install
 <br>
 In this **example** i will guide you on how to create a **simple loop** and add a movable `character` in it.
 <br>
-Once you open the **generated** solution you will be met with a **blanck project**, simply create the `main.cpp`.
+Once you open the **generated** solution you will be met with a **blank project**, simply create the `main.cpp`.
 <br>
 For the sake of **semplicity** i will illustrate how to get started on the `main.cpp` file, **ideally** you should create a **dedicated class** in order to store and initialize the **gameobjects**.
 <br>
@@ -58,7 +56,7 @@ You will now have to create a new pointer to the class
 ```cpp
 WTGD::LoopManager* manager = new WTGD::LoopManager();
 ```
-Now to create a `character`, simply do like so
+Now, to create a `character`, simply do like so
 ``` cpp
 WTGD::Character* player = new WTGD::Character(new WTGD::KeyboardController(), "Player");
 ```
@@ -85,4 +83,9 @@ manager->run(gameobjects);
 You should see a white square in the screen, move around with `WASD` and rotate using `Left and Right`.
 
 ---
-#### **For a better understanding of the framework refer to the [official documentation](doc/html/index.html)**
+
+<br>
+
+### **For a better understanding of the framework refer to the [official documentation](https://wtgd-framework.000webhostapp.com/)**
+#### [**Distributed under MIT License**](https://en.wikipedia.org/wiki/MIT_License)
+##### Developed by Kevin Salimbeni
