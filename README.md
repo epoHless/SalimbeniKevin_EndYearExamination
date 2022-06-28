@@ -6,8 +6,6 @@
 # **Contents**
 [**Installation**](#installation) - [**Supported Functionalities**](#basic-functionalities) - [**Get Started**](#get-started)  - [**Official Documentation**](https://wtgd-framework.000webhostapp.com/)
 
-
-
 <br>
 
 ## **Installation**
@@ -28,7 +26,6 @@ As of for now the WTGD Framework supports:
 The framework also provides simple ready-to-play classes such as: `Character` and `WorldObject`.
 <br>
 All classes are extendable, providing room for improvement and creativity.
-
 
 <br>
 
