@@ -1,18 +1,12 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#ifdef DLL_EXPORT
-#define CONTROLLER_API __declspec(dllexport)
-#else
-#define CONTROLLER_API __declspec(dllimport)
-#endif 
-
-#include "Component.h"
-#include <SFML/Graphics.hpp>
+#include <pch.h>
+#include <objects/components/Component.h>
 
 namespace WTGD
 {
-	class CONTROLLER_API Controller : public Component
+	class WTGD_API Controller : public Component
 	{
 		friend class MovementComponent;
 	public:

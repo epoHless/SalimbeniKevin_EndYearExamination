@@ -1,4 +1,5 @@
-#include "Object.h"
+#include <pch.h>
+#include <objects/Object.h>
 
 WTGD::Object::Object(const std::string name, bool is_active)
 {

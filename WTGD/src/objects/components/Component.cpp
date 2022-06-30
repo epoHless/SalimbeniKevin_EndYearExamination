@@ -1,4 +1,5 @@
-#include "Component.h"
+#include <pch.h>
+#include <objects/components/Component.h>
 
 void WTGD::Component::on_update(const float delta)
 {

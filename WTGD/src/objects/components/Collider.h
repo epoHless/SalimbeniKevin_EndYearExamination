@@ -1,19 +1,12 @@
 #ifndef COLLIDER_H
 #define COLLIDER_H
 
-#ifdef DLL_EXPORT
-#define COLLIDER_API __declspec(dllexport)
-#else
-#define COLLIDER_API __declspec(dllimport)
-#endif 
-
-#include <SFML/Graphics.hpp>
-#include "Component.h"
-#include <vector>
+#include <pch.h>
+#include <objects/components/Component.h>
 
 namespace WTGD
 {
-	class COLLIDER_API Collider : public Component
+	class WTGD_API Collider : public Component
 	{
 	public:
 		/// <summary>

@@ -42,6 +42,6 @@ void GameManager::initialize()
 
 	_manager->add_colliders(gameobjects);
 
-	_manager->createWindow(1280, 720, "Title");
+	_manager->create_window(1280, 720, "Title");
 }
 

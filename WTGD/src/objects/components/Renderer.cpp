@@ -1,5 +1,6 @@
-#include "Renderer.h"
-#include "../gameobjects//AreaObject.h"
+#include <pch.h>
+#include <objects/components/Renderer.h>
+#include <objects/gameobjects/AreaObject.h>
 
 WTGD::Renderer::Renderer() : Component("Renderer")
 {

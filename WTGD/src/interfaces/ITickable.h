@@ -1,15 +1,11 @@
 #ifndef ITICKABLE_H
 #define ITICKABLE_H
 
-#ifdef DLL_EXPORT
-#define ITICKABLE_API __declspec(dllexport)
-#else
-#define ITICKABLE_API __declspec(dllimport)
-#endif
+#include <pch.h>
 
 namespace WTGD
 {
-	class ITICKABLE_API ITickable
+	class WTGD_API ITickable
 	{
 	public:
 		/// <summary>

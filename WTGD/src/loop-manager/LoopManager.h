@@ -1,25 +1,18 @@
 #ifndef LOOP_MANAGER_H
 #define LOOP_MANAGER_H
 
-#ifdef DLL_EXPORT
-#define LOOP_MANAGER_API __declspec(dllexport)
-#else
-#define LOOP_MANAGER_API __declspec(dllimport)
-#endif
+#include <pch.h>
+#include <time-manager/TimeManager.h>
+#include <objects/gameobjects/Gameobject.h>
+#include <objects/components/KeyboardController.h>
+#include <objects/components/JoystickController.h>
+#include <objects/components/Collider.h>
+#include <objects/gameobjects/Character.h>
 
-#include <vector>
-#include <SFML/Graphics.hpp>
-#include "../time-manager/TimeManager.h"
-#include "../gameobjects/Gameobject.h"
-#include "../components/KeyboardController.h"
-#include "../components/JoystickController.h"
-#include "../components/Collider.h"
-#include <Character.h>
-#include <functional>
 
 namespace WTGD
 {
-	class LOOP_MANAGER_API LoopManager
+	class WTGD_API LoopManager
 	{
 	//Constructors / Destructor
 	public:
@@ -38,48 +31,48 @@ namespace WTGD
 		/// <summary>
 		/// Creates the game window
 		/// </summary>
-		void createWindow(const float width, const float height, const char* title);
+		void create_window(const float width, const float height, const char* title);
 
 		/// <summary>
 		/// Change the amount of max FPS for the game window (standard is 60 FPS)
 		/// </summary>
 		/// <param name="newLimit">The new FPS limit</param>
-		void setMaxFPS(unsigned newLimit);
+		void set_max_fps(unsigned newLimit);
 
 		/// <summary>
 		/// Returns the current frame's FPS
 		/// </summary>
 		/// <returns></returns>
-		unsigned getFPS()const;
+		unsigned get_fps()const;
 
 		/// <summary>
 		/// Toggle the FPS limit ON or OFF depending on the current setting
 		/// </summary>
-		void fpsLimitToggler();
+		void fps_limit_toggler();
 
 		/// <summary>
 		/// Draws the registered GameObjects on the screen
 		/// </summary>
-		void draw(std::vector<GameObject*> gameobjects);
+		void draw(const std::vector<GameObject*>& gameobjects) const;
 		/// <summary>
 		/// Updates the registered GameObjects on the screen
 		/// </summary>
 		/// <param name="gameobjects"></param>
-		void update(std::vector<GameObject*> gameobjects);
+		void update(const std::vector<GameObject*>& gameobjects) const;
 		/// <summary>
 		/// Updates the registeres GameObjects on the screen with a fixed update
 		/// </summary>
 		/// <param name="gameobjects"></param>
-		void fixed_update(std::vector<GameObject*> gameobjects);
+		void fixed_update(const std::vector<GameObject*>& gameobjects) const;
 		/// <summary>
 		/// Call this function to run the main loop
 		/// </summary>
 		/// <param name="gameobjects"></param>
-		void run(std::vector<GameObject*> gameobjects);
+		void run(const std::vector<GameObject*>& gameobjects);
 		/// <summary>
 		/// Reacts to events
 		/// </summary>
-		void pollEvents(/*std::function<void(sf::Event)>, sf::Event evt*/);
+		void pollEvents(/*std::function<void(sf::Event)>, sf::Event evt*/) const;
 		/// <summary>
 		/// Updates the game time
 		/// </summary>
@@ -123,7 +116,7 @@ namespace WTGD
 		float msForFixedUpdate = 0.016f;
 
 		std::function<void(sf::Event)> input_func = nullptr;
-		sf::Event input_event;
+		sf::Event input_event{};
 
 		std::vector<Collider*> activeColliders;
 	};

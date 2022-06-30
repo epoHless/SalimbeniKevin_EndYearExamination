@@ -1,4 +1,5 @@
-#include "JoystickController.h"
+#include <pch.h>
+#include <objects/components/JoystickController.h>
 
 void WTGD::JoystickController::on_update(const float delta)
 {

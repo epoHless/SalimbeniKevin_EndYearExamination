@@ -1,18 +1,13 @@
 #ifndef AREA_OBJECT_H
 #define AREA_OBJECT_H
 
-#ifdef DLL_EXPORT
-#define AREA_OBJECT_API __declspec(dllexport)
-#else
-#define AREA_OBJECT_API __declspec(dllimport)
-#endif 
-
-#include "GameObject.h"
-#include "../components/Transform.h"
+#include <pch.h>
+#include <objects/gameobjects/Gameobject.h>
+#include <objects/components/Transform.h>
 
 namespace WTGD
 {
-	class AREA_OBJECT_API AreaObject : public GameObject
+	class WTGD_API AreaObject : public GameObject
 	{
 	public:
 		/// <summary>

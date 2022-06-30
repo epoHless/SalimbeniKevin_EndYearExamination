@@ -1,18 +1,12 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#ifdef DLL_EXPORT
-#define RENDERER_API __declspec(dllexport)
-#else
-#define RENDERER_API __declspec(dllimport)
-#endif 
-
-#include "Component.h"
-#include <SFML/Graphics.hpp>
+#include <pch.h>
+#include <objects/components/Component.h>
 
 namespace WTGD
 {
-	class RENDERER_API Renderer : public Component
+	class WTGD_API Renderer : public Component
 	{
 		friend class LoopManager;
 	public:

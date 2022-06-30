@@ -1,4 +1,5 @@
-#include "Collider.h"
+#include <pch.h>
+#include <objects/components/Collider.h>
 
 WTGD::Collider::Collider(sf::RectangleShape* body, bool enabled) : Component("Collider")
 {

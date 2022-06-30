@@ -1,19 +1,16 @@
 #ifndef WORLD_OBJECT_H
 #define WORLD_OBJECT_H
 
-#ifdef DLL_EXPORT
-#define WORLD_OBJECT_API __declspec(dllexport)
-#else
-#define WORLD_OBJECT_API __declspec(dllimport)
-#endif 
+#include <pch.h>
 
 #include "AreaObject.h"
-#include "../components/Renderer.h"
-#include "../components/Collider.h"
+#include <objects/gameobjects/AreaObject.h>
+#include <objects/components/Renderer.h>
+#include <objects/components/Collider.h>
 
 namespace WTGD
 {
-    class WORLD_OBJECT_API WorldObject : public AreaObject
+    class WTGD_API WorldObject : public AreaObject
     {
     public:
         /// <summary>
