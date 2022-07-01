@@ -1,18 +1,12 @@
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
-#ifdef DLL_EXPORT
-#define TRANSFORM_API __declspec(dllexport)
-#else
-#define TRANSFORM_API __declspec(dllimport)
-#endif  
-
-#include "Component.h"
-#include <SFML/Graphics.hpp>
+#include <pch.h>
+#include <objects/components/Component.h>
 
 namespace WTGD
 {
-	class TRANSFORM_API Transform : public Component
+	class WTGD_API Transform : public Component
 	{
 	public:
 		/// <summary>

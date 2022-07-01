@@ -1,4 +1,5 @@
-#include "Transform.h"
+#include <pch.h>
+#include <objects/components/Transform.h>
 
 WTGD::Transform::Transform() : Component("Transform")
 {

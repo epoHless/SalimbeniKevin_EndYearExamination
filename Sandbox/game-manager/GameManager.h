@@ -1,8 +1,8 @@
 #ifndef GAME_MANAGER_H
 #define GAME_MANAGER_H
 
-#include <LoopManager.h>
-#include "../utilities/Utility.h"
+#include <loop-manager/LoopManager.h>
+#include <utilities/Utility.h>
 
 class GameManager
 {

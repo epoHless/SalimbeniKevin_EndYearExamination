@@ -1,4 +1,5 @@
-#include "Character.h"
+#include <pch.h>
+#include <objects/gameobjects/Character.h>
 
 WTGD::Character::Character(Controller* input, const std::string name, const bool is_active) : WorldObject(name, is_active)
 {

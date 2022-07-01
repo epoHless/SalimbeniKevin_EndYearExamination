@@ -1,19 +1,14 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
-#ifdef DLL_EXPORT
-#define COMPONENT_API __declspec(dllexport)
-#else
-#define COMPONENT_API __declspec(dllimport)
-#endif  
-
-#include <string>
-#include "../Object.h"
-#include "../../interfaces/ITickable.h"
+#include <pch.h>
+#include <objects/Object.h>
+#include <objects/gameobjects/Gameobject.h>
+#include <interfaces/ITickable.h>
 
 namespace WTGD
 {
-	class COMPONENT_API Component : public Object, public ITickable
+	class WTGD_API Component : public Object, public ITickable
 	{
 		friend class GameObject;
 	public:

@@ -1,60 +1,32 @@
-workspace "WTGD Framework"
-    architecture "x86_64"
-    configurations {"Debug", "Release"}
-    targetdir "%{wks.location}/bin/%{cfg.buildcfg}-%{cfg.architecture}"
-    objdir "%{wks.location}/int/%{cfg.buildcfg}-%{cfg.architecture}"
-    includedirs {"%{wks.location}/ThirdParty/include"}
-    libdirs {"%{wks.location}/ThirdParty/libs"}
+workspace "WTGD"
+    -- x86_64 will be deprecated soon - better x64
+    architecture "x64"
+    
+    configurations {
+        "Debug", 
+        "Release", 
+        "Ship"
+    }
+
     startproject "Sandbox"
 
-    filter "configurations:Debug"
-        defines "DEBUG"
-        symbols "On"
+    targetdir "%{wks.location}/bin/%{cfg.buildcfg}-%{cfg.architecture}"
+    objdir "%{wks.location}/int/%{cfg.buildcfg}-%{cfg.architecture}"
+    
+    -- same as targetdir but useable with strings
+    outdir = "%{wks.location}/bin/%{cfg.buildcfg}-%{cfg.architecture}"
 
-    filter "configurations:Release"
-        defines "RELEASE"
-        optimize "On"
-
-    project "Sandbox"
-        kind "ConsoleApp"
-        language "C++"
-        cppdialect "C++17"
-        location "%{wks.location}/Sandbox"
-
-        includedirs {"%{wks.location}/Sandbox/src"}
-
-        files {
-            "%{prj.location}/src/**.h",
-            "%{prj.location}/src/**.cpp"
+    filter {"configurations:Debug", "architecture:x64"}
+        postbuildmessage "copy x86 libs..."
+        postbuildcommands {
+            "{COPY} %{wks.location}/ThirdParty/libs/x86/*.dll " .. outdir
         }
 
-        links {
-            "sfml-system.lib",
-            "sfml-main.lib",
-            "sfml-window.lib",
-            "sfml-graphics.lib",
-            "sfml-audio.lib"
+    filter {"configurations:Release", "architecture:x64"}
+
+        postbuildcommands {
+            "{COPY} %{wks.location}/ThirdParty/libs/x86_64/*.dll " .. outdir 
         }
 
-    project "WTGD"
-        kind "SharedLib"
-        language "C++"
-        cppdialect "C++17"
-        location "%{wks.location}/WTGD"
-
-        includedirs {"%{wks.location}/WTGD/src"}
-
-        files {
-            "%{prj.location}/src/**.h",
-            "%{prj.location}/src/**.cpp"
-        }
-
-        links {
-            "sfml-system.lib",
-            "sfml-main.lib",
-            "sfml-window.lib",
-            "sfml-graphics.lib",
-            "sfml-audio.lib"
-        }
-
-    postbuildcommands "COPY %{wks.location}/ThirdParty/libs/*.dll %{wks.location}/bin/%{cfg.buildcfg}-%{cfg.architecture}"
+    include "WTGD/wtgd.lua"
+    include "Sandbox/sandbox.lua"

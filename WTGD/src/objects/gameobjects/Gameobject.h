@@ -1,24 +1,16 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#ifdef DLL_EXPORT
-#define GAMEOBJECT_API __declspec(dllexport)
-#else
-#define GAMEOBJECT_API __declspec(dllimport)
-#endif
-
-#include <string>
-#include <vector>
-
-#include "../Object.h"
-#include "../../interfaces/ITickable.h"
-#include "../components/Component.h"
+#include <pch.h>
+#include <objects/Object.h>
+#include <interfaces/ITickable.h>
+#include <objects/components/Component.h>
 
 class Component;
 
 namespace WTGD 
 {
-	class GAMEOBJECT_API GameObject : public Object, public ITickable
+	class WTGD_API GameObject : public Object, public ITickable
 	{
 		friend class LoopManager;
 	public:
@@ -88,7 +80,8 @@ namespace WTGD
 
 			for (Component* comp : components)
 			{
-				const auto val = dynamic_cast<T*>(comp);
+				T* val = nullptr;
+				val = reinterpret_cast<T*>(comp);
 				if (!val) continue;
 
 				return val;
@@ -109,7 +102,7 @@ namespace WTGD
 
 			if (components.size() == 0) return output;
 
-			for each (Component * comp in this->components)
+			for (Component * comp : this->components)
 			{
 				const auto val = dynamic_cast<T*>(comp);
 				if (!val) continue;

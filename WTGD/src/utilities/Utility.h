@@ -1,17 +1,12 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
-#ifdef DLL_EXPORT
-#define UTILITY_API __declspec(dllexport)
-#else
-#define UTILITY_API __declspec(dllimport)
-#endif
-
-#include "../gameobjects/Gameobject.h"
+#include <pch.h>
+#include <objects/gameobjects/Gameobject.h>
 
 namespace WTGD
 {
-	struct UTILITY_API Utility
+	struct WTGD_API Utility
 	{
 	public:
 

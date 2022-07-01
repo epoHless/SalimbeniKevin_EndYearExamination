@@ -1,4 +1,5 @@
-#include "Controller.h"
+#include <pch.h>
+#include <objects/components/Controller.h>
 
 WTGD::Controller::Controller() : Component("Base Controller")
 {

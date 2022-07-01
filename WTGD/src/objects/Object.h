@@ -1,17 +1,11 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#ifdef DLL_EXPORT
-#define OBJECT_API __declspec(dllexport)
-#else
-#define OBJECT_API __declspec(dllimport)
-#endif
-
-#include <string>
+#include <pch.h>
 
 namespace WTGD
 {
-	class OBJECT_API Object
+	class WTGD_API Object
 	{
 	public:
 		/// <summary>

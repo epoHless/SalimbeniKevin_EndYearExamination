@@ -1,4 +1,5 @@
-#include "AreaObject.h"
+#include <pch.h>
+#include <objects/gameobjects/AreaObject.h>
 
 WTGD::AreaObject::AreaObject(const std::string name, const bool is_active) : GameObject(name, is_active)
 {

@@ -1,19 +1,14 @@
 #ifndef MOVEMENT_COMPONENT_H
 #define MOVEMENT_COMPONENT_H
 
-#ifdef DLL_EXPORT
-#define MOVEMENT_COMPONENT_API __declspec(dllexport)
-#else
-#define MOVEMENT_COMPONENT_API __declspec(dllimport)
-#endif 
-
-#include "Component.h"
-#include "Controller.h"
-#include "Transform.h"
+#include <pch.h>
+#include <objects/components/Component.h>
+#include <objects/components/Controller.h>
+#include <objects/components/Transform.h>
 
 namespace WTGD
 {
-	class MOVEMENT_COMPONENT_API MovementComponent : public Component
+	class WTGD_API MovementComponent : public Component
 	{
 	public:
 		/// <summary>

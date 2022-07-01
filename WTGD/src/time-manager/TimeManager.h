@@ -1,17 +1,11 @@
 #ifndef TIME_MANAGER_H
 #define TIME_MANAGER_H
 
-#ifdef DLL_EXPORT
-#define TIME_MANAGER_API __declspec(dllexport)
-#else
-#define TIME_MANAGER_API __declspec(dllimport)
-#endif
-
-#include <SFML/System.hpp>
+#include <pch.h>
 
 namespace WTGD
 {
-	class TIME_MANAGER_API TimeManager
+	class WTGD_API TimeManager
 	{
 	public:
 		/// <summary>
@@ -27,7 +21,7 @@ namespace WTGD
 		/// Returns the time passed from the beginning of the frame
 		/// </summary>
 		/// <returns>Time Passed</returns>
-		sf::Time GetCurrentTime()const;
+		[[nodiscard]] sf::Time get_current_time()const;
 
 		/// <summary>
 		/// Returns the time passed from the last frame to the new one
@@ -35,7 +29,7 @@ namespace WTGD
 		/// <param name="currentTime">Current frame time</param>
 		/// <param name="lastTime">Last frame time</param>
 		/// <returns></returns>
-		static float GetElapsedTime(float currentTime, float lastTime);
+		static float get_elapsed_time(float currentTime, float lastTime);
 
 	private:
 		sf::Clock clock;

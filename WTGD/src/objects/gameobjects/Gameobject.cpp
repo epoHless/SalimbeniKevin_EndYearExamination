@@ -1,4 +1,5 @@
-#include "Gameobject.h"
+#include<pch.h>
+#include <objects/gameobjects/Gameobject.h>
 
 WTGD::GameObject::GameObject(const std::string name, const bool is_active) : Object(name, is_active)
 {
